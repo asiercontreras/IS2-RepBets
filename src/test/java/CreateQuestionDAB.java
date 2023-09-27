@@ -22,7 +22,7 @@ public class CreateQuestionDAB {
 
 	 //sut:system under test
 	 static DataAccess sut=new DataAccess();
-	 //hola
+	 //holaAsier
 	 //additional operations needed to execute the test 
 	 static TestDataAccess testDA=new TestDataAccess();
 // prueba
