@@ -22,10 +22,8 @@ public class CreateQuestionDAB {
 
 	 //sut:system under test
 	 static DataAccess sut=new DataAccess();
-	 //holaAsier
 	 //additional operations needed to execute the test 
 	 static TestDataAccess testDA=new TestDataAccess();
-// prueba
 	private Event ev;
 	@Test
 	//sut.createQuestion:  The event has NOT one question with a queryText. 
