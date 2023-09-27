@@ -28,7 +28,7 @@ public class CreateQuestionDAB {
 
 	private Event ev;
 	
-	//Prueba
+	//Prueba2
 	@Test
 	//sut.createQuestion:  The event has NOT one question with a queryText. 
 	public void test1() {
