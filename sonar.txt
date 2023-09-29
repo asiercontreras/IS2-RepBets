@@ -1,0 +1,8 @@
+SONAR_TOKEN
+b16046b1d8d2f0a9d351704f65d81ffed18d9d07
+
+sonar-scanner.bat \
+  -D"sonar.organization=proyectois2-bets" \
+  -D"sonar.projectKey=proyectois2-bets_repbets" \
+  -D"sonar.sources=." \
+  -D"sonar.host.url=https://sonarcloud.io"
