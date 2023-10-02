@@ -1,0 +1,111 @@
+
+6domain.Question#doesForecastExist(Ljava/lang/String;)ZV
+J/C:/Users/Asier/Desktop/IS2/IS2-RepBets/src/main/java/domain/Question.java¦ ¦($"6*õ
+2
+¨ ¨(N
+L
+
+¨ ¨(
+idomain.Forecast"__id*"
+
+__unknown_file (
+""‹
+ˆ
+
+¨ ¨(
+idomain.Forecast"
+__arrayGet*4
+
+__unknown_file (
+
+%4java.util.Vector*"
+
+__unknown_file (
+""*
+4
+1*%
+3
+ª ª("
+
+ª ª(
+""*
+4
+© ©(¡ž
+
+© ©(!
+%5java.lang.String"2domain.Forecast#getDescription()Ljava/lang/String;*2
+
+__unknown_file (
+
+idomain.Forecast2getDescription()ßÜ
+
+© ©(8	
+%6int"/java.lang.String#compareTo(Ljava/lang/String;)I*4
+
+__unknown_file (
+
+%5java.lang.String*=
+
+__unknown_file (!
+
+descriptionjava.lang.String2compareTo(Ljava/lang/String;)*
+2
+3*‚
+5
+¨ ¨(l
+j
+
+¨ ¨(&
+%4java.util.Vector"__id*>
+
+__unknown_file ("* 
+domain.Question"
+	forecasts*
+2*÷
+6
+§ §(S
+Q
+
+§ §(
+%0java.io.PrintStream"__id*"
+
+__unknown_file (
+""l
+j
+
+§ §()
+%1java.util.Vector"__id*>
+
+__unknown_file ("* 
+domain.Question"
+	forecastsqo
+
+§ §(0	
+%2int"java.util.Vector#size()I*4
+
+__unknown_file (
+
+%1java.util.Vector2size()ª§
+
+§ §(1
+
+%3void"java.io.PrintStream#println(I)V*7
+
+__unknown_file (
+
+%0java.io.PrintStream*'
+
+__unknown_file (
+	
+%2int2
+println(I)*
+5*%
+1
+¬ ¬("
+
+¬ ¬(
+"":-
+
+¦% ¦(7
+descriptionjava.lang.StringB
+domain.QuestionHP

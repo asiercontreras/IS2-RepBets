@@ -1,16 +1,34 @@
 
-6domain.Question#getQuestionNumber()Ljava/lang/Integer;I
-?/Users/iturrioz/git/Bets2021/src/main/java/domain/Question.java4 4(!"1*Ï
-1I
-?/Users/iturrioz/git/Bets2021/src/main/java/domain/Question.java5	 5(–
-“
-I
-?/Users/iturrioz/git/Bets2021/src/main/java/domain/Question.java5	 5(
-%0java.lang.Integer"__id*'*%
-domain.Question"
-questionNumber"f
-I
-?/Users/iturrioz/git/Bets2021/src/main/java/domain/Question.java5 5(
-
-%0java.lang.IntegerB
-domain.Question
+OdataAccess.DataAccess#getQuestionForecasts(Ldomain/Question;)Ljava/util/Vector;\
+P/C:/Users/Asier/Desktop/IS2/IS2-RepBets/src/main/java/dataAccess/DataAccess.javaª ª(0"1*Ú
+1
+« «(°­
+
+«- «(I
+%0java.lang.Integer"6domain.Question#getQuestionNumber()Ljava/lang/Integer;*9
+
+__unknown_file (
+
+questiondomain.Question2getQuestionNumber()N
+L
+
+« «(K
+qdomain.Question"__id*"
+
+__unknown_file (
+""š
+
+¬ ¬(
+%1java.util.Vector"0domain.Question#getForecasts()Ljava/util/Vector;*2
+
+__unknown_file (
+
+qdomain.Question2getForecasts()"&
+
+¬ ¬( 
+
+%1java.util.Vector:)
+
+ª1 ª(B
+questiondomain.QuestionB
+dataAccess.DataAccessH

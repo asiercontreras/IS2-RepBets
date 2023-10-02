@@ -1,0 +1,28 @@
+gui.InitGUI#getJButtonSignUp()Ljavax/swing/JButton;
+java.lang.Object#getClass()Ljava/lang/Class;
+java.lang.Class#getResource(Ljava/lang/String;)Ljava/net/URL;
+java.awt.Color#instance-init#
+javax.swing.JButton#<init>()V
+java.util.ResourceBundle#getString(Ljava/lang/String;)Ljava/lang/String;
+javax.swing.ImageIcon#<init>(Ljava/awt/Image;)V
+javax.swing.ImageIcon#<init>(Ljava/net/URL;)V
+java.awt.Color#<init>(III)V
+java.util.ResourceBundle#getBundle(Ljava/lang/String;)Ljava/util/ResourceBundle;
+javax.swing.ImageIcon#instance-init#
+javax.swing.BorderFactory#createEmptyBorder()Ljavax/swing/border/Border;
+javax.swing.JButton#instance-init#
+==
+getImage javax.swing.ImageIcon#getImage()Ljava/awt/Image;
+setText javax.swing.AbstractButton#setText(Ljava/lang/String;)V
+getScaledInstance java.awt.Image#getScaledInstance(III)Ljava/awt/Image;
+setIcon javax.swing.AbstractButton#setIcon(Ljavax/swing/Icon;)V
+getContentPane javax.swing.JFrame#getContentPane()Ljava/awt/Container;
+addMouseListener java.awt.Component#addMouseListener(Ljava/awt/event/MouseListener;)V
+setBounds java.awt.Component#setBounds(IIII)V
+setBorder javax.swing.JComponent#setBorder(Ljavax/swing/border/Border;)V
+add java.awt.Container#add(Ljava/awt/Component;)Ljava/awt/Component;
+setFocusPainted javax.swing.AbstractButton#setFocusPainted(Z)V
+addActionListener javax.swing.AbstractButton#addActionListener(Ljava/awt/event/ActionListener;)V
+setOpaque javax.swing.JComponent#setOpaque(Z)V
+setBackground javax.swing.JComponent#setBackground(Ljava/awt/Color;)V
+setForeground javax.swing.JComponent#setForeground(Ljava/awt/Color;)V

@@ -1,0 +1,12 @@
+gui.EditarPerfilGUI#getUserImg()Ljavax/swing/ImageIcon;
+java.lang.Object#getClass()Ljava/lang/Class;
+java.lang.Class#getResource(Ljava/lang/String;)Ljava/net/URL;
+javax.swing.ImageIcon#<init>([B)V
+javax.swing.ImageIcon#<init>(Ljava/awt/Image;)V
+javax.swing.ImageIcon#<init>(Ljava/net/URL;)V
+javax.swing.ImageIcon#instance-init#
+==
+getImage javax.swing.ImageIcon#getImage()Ljava/awt/Image;
+getCurrentUser businessLogic.BLFacade#getCurrentUser()Ldomain/User;
+getScaledInstance java.awt.Image#getScaledInstance(III)Ljava/awt/Image;
+getProfile_img domain.User#getProfile_img()[B

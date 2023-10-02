@@ -1,0 +1,39 @@
+
+)domain.Event#toString()Ljava/lang/String;Q
+G/C:/Users/Asier/Desktop/IS2/IS2-RepBets/src/main/java/domain/Event.javaS S("1*ð
+1T	 T(j
+h
+T	 T(
+%0java.lang.Integer"__id*=
+
+__unknown_file (!*
+domain.Event"
+eventNumberh
+f
+T	 T(
+%1java.lang.String"__concat*%
+T	 T(
+
+%0java.lang.Integer*
+T T(
+;i
+g
+T T($
+%2java.lang.String"__id*=
+
+__unknown_file (!*
+domain.Event"
+descriptionz
+x
+T	 T($
+%3java.lang.String"__concat*$
+T	 T(
+
+%1java.lang.String*$
+T T($
+
+%2java.lang.String"$
+T T(%
+
+%3java.lang.StringB
+domain.EventH

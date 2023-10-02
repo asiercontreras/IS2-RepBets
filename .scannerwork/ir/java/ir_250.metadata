@@ -1,0 +1,20 @@
+gui.MainGUI#getJContentPane()Ljavax/swing/JPanel;
+gui.MainGUI#getLblNewLabel()Ljavax/swing/JLabel;
+gui.MainGUI#getJButtonCreateEvent()Ljavax/swing/JButton;
+javax.swing.JPanel#<init>()V
+gui.MainGUI#getJButtonCreateForecast()Ljavax/swing/JButton;
+gui.MainGUI#getJButtonQueryQueries()Ljavax/swing/JButton;
+gui.MainGUI#getJButtonLookBets()Ljavax/swing/JButton;
+gui.MainGUI#getPanel()Ljavax/swing/JPanel;
+javax.swing.JPanel#instance-init#
+gui.MainGUI#getBtnChangeProfile()Ljavax/swing/JButton;
+gui.MainGUI#getJButtonAddMoney()Ljavax/swing/JButton;
+gui.MainGUI#getJButtonMakeBet()Ljavax/swing/JButton;
+gui.MainGUI#getjButtonCloseEvent()Ljavax/swing/JButton;
+gui.MainGUI#getJButtonCreateQuery()Ljavax/swing/JButton;
+gui.MainGUI#getBtnLogOut()Ljavax/swing/JButton;
+==
+add java.awt.Container#add(Ljava/awt/Component;)Ljava/awt/Component;
+getCurrentUser businessLogic.BLFacade#getCurrentUser()Ldomain/User;
+isAdmin domain.User#isAdmin()Z
+setLayout java.awt.Container#setLayout(Ljava/awt/LayoutManager;)V

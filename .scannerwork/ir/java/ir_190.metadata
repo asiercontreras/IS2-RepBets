@@ -1,0 +1,7 @@
+domain.Forecast#equals(Ljava/lang/Object;)Z
+java.lang.Object#getClass()Ljava/lang/Class;
+java.lang.String#equals(Ljava/lang/Object;)Z
+==
+equals domain.Question#equals(Ljava/lang/Object;)Z
+getQuestion domain.Forecast#getQuestion()Ldomain/Question;
+getDescription domain.Forecast#getDescription()Ljava/lang/String;

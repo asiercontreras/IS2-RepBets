@@ -1,0 +1,6 @@
+dataAccess.DataAccess#addMoney(Ldomain/User;F)F
+==
+println java.io.PrintStream#println(Ljava/lang/String;)V
+getDni domain.User#getDni()Ljava/lang/String;
+getWallet domain.User#getWallet()F
+setWallet domain.User#setWallet(F)V

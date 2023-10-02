@@ -1,0 +1,8 @@
+businessLogic.BLFacadeImplementation#<init>()V
+dataAccess.DataAccess#instance-init#
+dataAccess.DataAccess#<init>(Z)V
+dataAccess.DataAccess#<init>()V
+==
+initializeDB dataAccess.DataAccess#initializeDB()V
+println java.io.PrintStream#println(Ljava/lang/String;)V
+close dataAccess.DataAccess#close()V

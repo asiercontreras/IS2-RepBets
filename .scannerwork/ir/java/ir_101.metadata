@@ -1,0 +1,5 @@
+test.businessLogic.TestFacadeImplementation#removeEvent(Ldomain/Event;)Z
+==
+open test.dataAccess.TestDataAccess#open()V
+close test.dataAccess.TestDataAccess#close()V
+removeEvent test.dataAccess.TestDataAccess#removeEvent(Ldomain/Event;)Z

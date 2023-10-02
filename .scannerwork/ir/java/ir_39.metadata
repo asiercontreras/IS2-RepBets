@@ -1,0 +1,4 @@
+gui.WalletGUI#instance-init#
+gui.ApplicationLauncher#getBusinessLogic()LbusinessLogic/BLFacade;
+==
+getCurrentUser businessLogic.BLFacade#getCurrentUser()Ldomain/User;

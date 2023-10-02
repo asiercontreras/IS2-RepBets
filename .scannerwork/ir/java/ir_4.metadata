@@ -1,0 +1,7 @@
+dataAccess.DataAccess#createUser(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;Ljava/lang/String;Z)Ldomain/User;
+exceptions.ObjectAlreadyExistException#<init>(Ljava/lang/String;)V
+domain.User#<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;Ljava/lang/String;Z)V
+domain.User#instance-init#
+exceptions.ObjectAlreadyExistException#instance-init#
+==
+println java.io.PrintStream#println(Ljava/lang/String;)V

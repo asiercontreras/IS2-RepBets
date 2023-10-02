@@ -1,0 +1,63 @@
+gui.CreateBetGUI#jbInit()V
+java.lang.Class#getResource(Ljava/lang/String;)Ljava/net/URL;
+javax.swing.JButton#<init>()V
+java.awt.Rectangle#<init>(IIII)V
+java.awt.Dimension#<init>(II)V
+javax.swing.table.DefaultTableModel#<init>([[Ljava/lang/Object;[Ljava/lang/Object;)V
+java.awt.Dimension#instance-init#
+java.awt.Rectangle#instance-init#
+javax.swing.ImageIcon#<init>(Ljava/net/URL;)V
+java.util.ResourceBundle#getBundle(Ljava/lang/String;)Ljava/util/ResourceBundle;
+java.awt.Font#instance-init#
+javax.swing.JButton#instance-init#
+javax.swing.table.DefaultTableModel#instance-init#
+java.util.ResourceBundle#getString(Ljava/lang/String;)Ljava/lang/String;
+java.awt.Color#<init>(III)V
+java.awt.Cursor#getPredefinedCursor(I)Ljava/awt/Cursor;
+javax.swing.ImageIcon#instance-init#
+javax.swing.JLabel#<init>()V
+gui.CreateQuestionGUI#paintDaysWithEvents(LJCalendar;Ljava/util/Vector;)V
+java.awt.Color#instance-init#
+java.lang.Object#getClass()Ljava/lang/Class;
+javax.swing.ImageIcon#<init>(Ljava/awt/Image;)V
+javax.swing.JLabel#instance-init#
+java.awt.Font#<init>(Ljava/lang/String;II)V
+javax.swing.BorderFactory#createEmptyBorder()Ljavax/swing/border/Border;
+gui.ApplicationLauncher#getBusinessLogic()LbusinessLogic/BLFacade;
+==
+add java.awt.Container#add(Ljava/awt/Component;Ljava/lang/Object;)V
+setVisible javax.swing.JComponent#setVisible(Z)V
+getScaledInstance java.awt.Image#getScaledInstance(III)Ljava/awt/Image;
+setIcon javax.swing.AbstractButton#setIcon(Ljavax/swing/Icon;)V
+setResizable java.awt.Frame#setResizable(Z)V
+setCursor java.awt.Component#setCursor(Ljava/awt/Cursor;)V
+addMouseListener java.awt.Component#addMouseListener(Ljava/awt/event/MouseListener;)V
+setBounds java.awt.Component#setBounds(IIII)V
+addFocusListener java.awt.Component#addFocusListener(Ljava/awt/event/FocusListener;)V
+add java.awt.Container#add(Ljava/lang/String;Ljava/awt/Component;)Ljava/awt/Component;
+setContentAreaFilled javax.swing.AbstractButton#setContentAreaFilled(Z)V
+setPreferredWidth javax.swing.table.TableColumn#setPreferredWidth(I)V
+setText javax.swing.text.JTextComponent#setText(Ljava/lang/String;)V
+setLayout java.awt.Container#setLayout(Ljava/awt/LayoutManager;)V
+addActionListener javax.swing.AbstractButton#addActionListener(Ljava/awt/event/ActionListener;)V
+setBounds java.awt.Component#setBounds(Ljava/awt/Rectangle;)V
+addActionListener javax.swing.JComboBox#addActionListener(Ljava/awt/event/ActionListener;)V
+setColumns javax.swing.JTextField#setColumns(I)V
+setFont javax.swing.JComponent#setFont(Ljava/awt/Font;)V
+setText javax.swing.JLabel#setText(Ljava/lang/String;)V
+getImage javax.swing.ImageIcon#getImage()Ljava/awt/Image;
+getContentPane javax.swing.JFrame#getContentPane()Ljava/awt/Container;
+getEventsMonth businessLogic.BLFacade#getEventsMonth(Ljava/util/Date;)Ljava/util/Vector;
+setModel javax.swing.JTable#setModel(Ljavax/swing/table/TableModel;)V
+getColumnModel javax.swing.JTable#getColumnModel()Ljavax/swing/table/TableColumnModel;
+setSize java.awt.Window#setSize(Ljava/awt/Dimension;)V
+setViewportView javax.swing.JScrollPane#setViewportView(Ljava/awt/Component;)V
+setBorder javax.swing.JComponent#setBorder(Ljavax/swing/border/Border;)V
+add java.awt.Container#add(Ljava/awt/Component;)Ljava/awt/Component;
+getColumn javax.swing.table.TableColumnModel#getColumn(I)Ljavax/swing/table/TableColumn;
+getCurrentUser businessLogic.BLFacade#getCurrentUser()Ldomain/User;
+setTitle java.awt.Frame#setTitle(Ljava/lang/String;)V
+setEnabled javax.swing.AbstractButton#setEnabled(Z)V
+setBackground javax.swing.JComponent#setBackground(Ljava/awt/Color;)V
+getWallet domain.User#getWallet()F
+setForeground javax.swing.JComponent#setForeground(Ljava/awt/Color;)V

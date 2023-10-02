@@ -1,0 +1,5 @@
+domain.Question#addForecast(Ljava/lang/String;F)Ldomain/Forecast;
+domain.Forecast#instance-init#
+domain.Forecast#<init>(Ljava/lang/String;FLdomain/Question;)V
+==
+add java.util.Vector#add(Ljava/lang/Object;)Z

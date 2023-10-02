@@ -1,0 +1,81 @@
+
+Ötest.businessLogic.TestFacadeImplementation#addEventWithQuestion(Ljava/lang/String;Ljava/util/Date;Ljava/lang/String;F)Ldomain/Event;p
+f/C:/Users/Asier/Desktop/IS2/IS2-RepBets/src/test/java/test/businessLogic/TestFacadeImplementation.java (#"1*
+
+1   (ô
+ñ
+   ($
+%0test.dataAccess.TestDataAccess"__id*^
+
+__unknown_file (B*@-
++test.businessLogic.TestFacadeImplementation"
+dbManagerTestçä
+   (
+
+%1void"&test.dataAccess.TestDataAccess#open()V*B
+
+__unknown_file (&
+$
+%0test.dataAccess.TestDataAccess2open()ô
+ñ
+! !($
+%2test.dataAccess.TestDataAccess"__id*^
+
+__unknown_file (B*@-
++test.businessLogic.TestFacadeImplementation"
+dbManagerTestÌ
+! !(<
+%3domain.Event"xtest.dataAccess.TestDataAccess#addEventWithQuestion(Ljava/lang/String;Ljava/util/Date;Ljava/lang/String;F)Ldomain/Event;*B
+
+__unknown_file (&
+$
+%2test.dataAccess.TestDataAccess*6
+
+__unknown_file (
+
+descjava.lang.String*1
+
+__unknown_file (
+
+djava.util.Date*3
+
+__unknown_file (
+
+qjava.lang.String*"
+
+__unknown_file (
+""2KaddEventWithQuestion(Ljava/lang/String;Ljava/util/Date;Ljava/lang/String;F)W
+U
+! !(=
+odomain.Event"__id*0
+
+__unknown_file (
+
+%3domain.Eventô
+ñ
+" "($
+%4test.dataAccess.TestDataAccess"__id*^
+
+__unknown_file (B*@-
++test.businessLogic.TestFacadeImplementation"
+dbManagerTestèå
+" "(
+
+%5void"'test.dataAccess.TestDataAccess#close()V*B
+
+__unknown_file (&
+$
+%4test.dataAccess.TestDataAccess2close()"
+# #(
+
+odomain.Event:$
+$ (0
+descjava.lang.String:
+1 (8
+djava.util.Date:!
+9 (B
+qjava.lang.String: 
+
+__unknown_file (
+""B/-
++test.businessLogic.TestFacadeImplementationH

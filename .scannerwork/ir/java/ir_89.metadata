@@ -1,0 +1,6 @@
+domain.Question#doesForecastExist(Ljava/lang/String;)Z
+java.lang.String#compareTo(Ljava/lang/String;)I
+==
+size java.util.Vector#size()I
+println java.io.PrintStream#println(I)V
+getDescription domain.Forecast#getDescription()Ljava/lang/String;

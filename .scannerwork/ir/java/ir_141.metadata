@@ -1,0 +1,2 @@
+gui.EditarPerfilGUI#instance-init#
+gui.ApplicationLauncher#getBusinessLogic()LbusinessLogic/BLFacade;

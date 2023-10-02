@@ -1,0 +1,7 @@
+dataAccess.DataAccess#addCard(Ldomain/User;Ljava/lang/String;ILjava/lang/String;)Ldomain/Card;
+exceptions.ObjectAlreadyExistException#<init>(Ljava/lang/String;)V
+exceptions.ObjectAlreadyExistException#instance-init#
+==
+println java.io.PrintStream#println(Ljava/lang/String;)V
+getDni domain.User#getDni()Ljava/lang/String;
+addCard domain.User#addCard(Ljava/lang/String;ILjava/lang/String;)Ldomain/Card;

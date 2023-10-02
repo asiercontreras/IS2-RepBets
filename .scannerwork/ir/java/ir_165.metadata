@@ -1,0 +1,5 @@
+domain.Event#addQuestion(Ljava/lang/String;F)Ldomain/Question;
+domain.Question#instance-init#
+domain.Question#<init>(Ljava/lang/String;FLdomain/Event;)V
+==
+add java.util.Vector#add(Ljava/lang/Object;)Z

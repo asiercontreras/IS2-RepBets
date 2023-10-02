@@ -1,0 +1,3 @@
+gui.ApplicationLauncher#closeInit(Ljava/awt/event/ActionEvent;)V
+==
+close gui.InitGUI#close(Ljava/awt/event/ActionEvent;)V

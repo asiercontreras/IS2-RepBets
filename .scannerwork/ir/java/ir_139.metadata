@@ -1,0 +1,3 @@
+exceptions.NotEnoughMoneyException#<init>()V
+==
+<init> java.lang.Exception#<init>()V

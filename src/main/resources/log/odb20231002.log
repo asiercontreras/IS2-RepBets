@@ -1,0 +1,177 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-10-02 18:53:58 #1 store] 
+Database 'C:\Users\Asier\Desktop\IS2\IS2-RepBets\src\main\resources\bets.temp' is opened by 18484@LAPTOP-2LSGMS7V
+
+[2023-10-02 18:53:59 #2 type.registry] 
+New type domain.Question
+
+[2023-10-02 18:53:59 #3 type] 
+Type domain.Question is not enhanced.
+
+[2023-10-02 18:53:59 #4 type.registry] 
+New type domain.Forecast
+
+[2023-10-02 18:53:59 #5 type.registry] 
+New type java.util.Vector<domain.Forecast>
+
+[2023-10-02 18:53:59 #6 type.registry] 
+New type domain.Event
+
+[2023-10-02 18:53:59 #7 type] 
+Type domain.Forecast is not enhanced.
+
+[2023-10-02 18:53:59 #8 type.registry] 
+New type domain.Bet
+
+[2023-10-02 18:53:59 #9 type.registry] 
+New type java.util.Vector<domain.Bet>
+
+[2023-10-02 18:53:59 #10 type] 
+Type domain.Event is not enhanced.
+
+[2023-10-02 18:53:59 #11 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2023-10-02 18:53:59 #12 type] 
+Type domain.Bet is not enhanced.
+
+[2023-10-02 18:53:59 #13 type.registry] 
+New type domain.User
+
+[2023-10-02 18:53:59 #14 type] 
+Type domain.User is not enhanced.
+
+[2023-10-02 18:53:59 #15 type.registry] 
+New type byte[]
+
+[2023-10-02 18:53:59 #16 type.registry] 
+New type domain.Card
+
+[2023-10-02 18:53:59 #17 type.registry] 
+New type java.util.Vector<domain.Card>
+
+[2023-10-02 18:53:59 #18 type] 
+Type domain.Card is not enhanced.
+
+[2023-10-02 18:53:59 #19 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-10-02 19:02:37 #1 store] 
+Database 'C:\Users\Asier\Desktop\IS2\IS2-RepBets\src\main\resources\bets.temp' is opened by 1856@LAPTOP-2LSGMS7V
+
+[2023-10-02 19:02:37 #2 type.registry] 
+New type domain.Question
+
+[2023-10-02 19:02:37 #3 type] 
+Type domain.Question is not enhanced.
+
+[2023-10-02 19:02:37 #4 type.registry] 
+New type domain.Forecast
+
+[2023-10-02 19:02:37 #5 type.registry] 
+New type java.util.Vector<domain.Forecast>
+
+[2023-10-02 19:02:37 #6 type.registry] 
+New type domain.Event
+
+[2023-10-02 19:02:37 #7 type] 
+Type domain.Forecast is not enhanced.
+
+[2023-10-02 19:02:37 #8 type.registry] 
+New type domain.Bet
+
+[2023-10-02 19:02:37 #9 type.registry] 
+New type java.util.Vector<domain.Bet>
+
+[2023-10-02 19:02:37 #10 type] 
+Type domain.Event is not enhanced.
+
+[2023-10-02 19:02:37 #11 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2023-10-02 19:02:37 #12 type] 
+Type domain.Bet is not enhanced.
+
+[2023-10-02 19:02:37 #13 type.registry] 
+New type domain.User
+
+[2023-10-02 19:02:37 #14 type] 
+Type domain.User is not enhanced.
+
+[2023-10-02 19:02:37 #15 type.registry] 
+New type byte[]
+
+[2023-10-02 19:02:37 #16 type.registry] 
+New type domain.Card
+
+[2023-10-02 19:02:37 #17 type.registry] 
+New type java.util.Vector<domain.Card>
+
+[2023-10-02 19:02:37 #18 type] 
+Type domain.Card is not enhanced.
+
+[2023-10-02 19:02:37 #19 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-10-02 19:20:59 #1 store] 
+Database 'C:\Users\Asier\Desktop\IS2\IS2-RepBets\src\main\resources\bets.temp' is opened by 1396@LAPTOP-2LSGMS7V
+
+[2023-10-02 19:20:59 #2 type.registry] 
+New type domain.Question
+
+[2023-10-02 19:20:59 #3 type] 
+Type domain.Question is not enhanced.
+
+[2023-10-02 19:20:59 #4 type.registry] 
+New type domain.Forecast
+
+[2023-10-02 19:20:59 #5 type.registry] 
+New type java.util.Vector<domain.Forecast>
+
+[2023-10-02 19:20:59 #6 type.registry] 
+New type domain.Event
+
+[2023-10-02 19:20:59 #7 type] 
+Type domain.Forecast is not enhanced.
+
+[2023-10-02 19:20:59 #8 type.registry] 
+New type domain.Bet
+
+[2023-10-02 19:20:59 #9 type.registry] 
+New type java.util.Vector<domain.Bet>
+
+[2023-10-02 19:20:59 #10 type] 
+Type domain.Event is not enhanced.
+
+[2023-10-02 19:20:59 #11 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2023-10-02 19:20:59 #12 type] 
+Type domain.Bet is not enhanced.
+
+[2023-10-02 19:20:59 #13 type.registry] 
+New type domain.User
+
+[2023-10-02 19:20:59 #14 type] 
+Type domain.User is not enhanced.
+
+[2023-10-02 19:20:59 #15 type.registry] 
+New type byte[]
+
+[2023-10-02 19:20:59 #16 type.registry] 
+New type domain.Card
+
+[2023-10-02 19:20:59 #17 type.registry] 
+New type java.util.Vector<domain.Card>
+
+[2023-10-02 19:20:59 #18 type] 
+Type domain.Card is not enhanced.
+
+[2023-10-02 19:20:59 #19 type.registry] 
+New type java.util.Vector<java.lang.Object>
+

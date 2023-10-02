@@ -1,17 +1,93 @@
 
-/domain.Question#getQuestion()Ljava/lang/String;I
-?/Users/iturrioz/git/Bets2021/src/main/java/domain/Question.javaH H("1*Ç
-1I
-?/Users/iturrioz/git/Bets2021/src/main/java/domain/Question.javaI	 I(
-Œ
-I
-?/Users/iturrioz/git/Bets2021/src/main/java/domain/Question.javaI	 I(
-%0java.lang.String"__id*!*
-domain.Question"
+FdataAccess.DataAccess#existQuestion(Ldomain/Event;Ljava/lang/String;)Z\
+P/C:/Users/Asier/Desktop/IS2/IS2-RepBets/src/main/java/dataAccess/DataAccess.javaÇ Ç( "1*Í	
+1
+È È(S
+Q
 
-question"e
-I
-?/Users/iturrioz/git/Bets2021/src/main/java/domain/Question.javaI I(
+È È(
+%0java.io.PrintStream"__id*"
+
+__unknown_file (
+""’
+
+
+È È(I
+%1java.lang.String"__concat*8
+
+È È(C*(
+&>> DataAccess: existQuestion=> event= *%
+
+ÈD È(I
+
+eventdomain.Eventw
+u
+
+È È(W
+%2java.lang.String"__concat*&
+
+È È(I
 
-%0java.lang.StringB
-domain.Question
+%1java.lang.String*
+
+ÈJ È(W
+ question= ‡
+„
+
+È È(`
+%3java.lang.String"__concat*&
+
+È È(W
+
+%2java.lang.String*,
+
+ÈX È(`
+
+questionjava.lang.StringÙÖ
+
+È È(a
+
+%4void"0java.io.PrintStream#println(Ljava/lang/String;)V*7
+
+__unknown_file (
+
+%0java.io.PrintStream*4
+
+__unknown_file (
+
+%3java.lang.String2println(Ljava/lang/String;)¡ž
+
+É( É(>
+%5java.lang.Integer"0domain.Event#getEventNumber()Ljava/lang/Integer;*3
+
+__unknown_file (
+
+eventdomain.Event2getEventNumber()L
+J
+
+É É(@
+evdomain.Event"__id*"
+
+__unknown_file (
+""êç
+
+Ê Ê(.
+%6boolean"4domain.Event#DoesQuestionExists(Ljava/lang/String;)Z*0
+
+__unknown_file (
+
+evdomain.Event*:
+
+__unknown_file (
+
+questionjava.lang.String2&DoesQuestionExists(Ljava/lang/String;)"
+
+Ê Ê(/
+"":#
+
+Ç! Ç(-
+eventdomain.Event:*
+
+Ç. Ç(=
+questionjava.lang.StringB
+dataAccess.DataAccessHP

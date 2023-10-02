@@ -1,0 +1,88 @@
+
++domain.Question#equals(Ljava/lang/Object;)ZV
+J/C:/Users/Asier/Desktop/IS2/IS2-RepBets/src/main/java/domain/Question.java¹ ¹("7"8*%
+2
+¿J ¿(N"
+
+¿C ¿(O
+""*§
+3
+¾  ¾(!_
+]
+
+¾ ¾("
+qdomain.Question"__id*3
+
+__unknown_file (
+
+ojava.lang.Object©¦
+
+¿ ¿( 
+%2java.lang.Integer"6domain.Question#getQuestionNumber()Ljava/lang/Integer;*2
+
+__unknown_file (
+
+qdomain.Question2getQuestionNumber()¦£
+
+¿( ¿(@
+%3java.lang.Integer"6domain.Question#getQuestionNumber()Ljava/lang/Integer;*/
+
+__unknown_file (
+domain.Question2getQuestionNumber()×Ô
+
+¿ ¿(A
+%4boolean"-java.lang.Integer#equals(Ljava/lang/Object;)Z*5
+
+__unknown_file (
+
+%2java.lang.Integer*5
+
+__unknown_file (
+
+%3java.lang.Integer2equals(Ljava/lang/Object;)*
+2
+1*%
+4
+¼ ¼(!"
+
+¼ ¼("
+""*%
+6
+». »(3"
+
+»' »(4
+""*Æ
+7
+» »(‘Ž
+
+» »(
+%0java.lang.Class",java.lang.Object#getClass()Ljava/lang/Class;*/
+
+__unknown_file (
+domain.Question2
+getClass()•’
+
+» »(%
+%1java.lang.Class",java.lang.Object#getClass()Ljava/lang/Class;*3
+
+__unknown_file (
+
+ojava.lang.Object2
+getClass()*	
+3
+4
+6*%
+8
+º º(""
+
+º º(#
+""*%
+1
+À À("
+
+À À(
+"":#
+
+¹ ¹("
+ojava.lang.ObjectB
+domain.QuestionHP

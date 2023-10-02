@@ -1,0 +1,10 @@
+gui.InitGUI#init()V
+java.util.ResourceBundle#getString(Ljava/lang/String;)Ljava/lang/String;
+java.util.ResourceBundle#getBundle(Ljava/lang/String;)Ljava/util/ResourceBundle;
+gui.InitGUI#getJContentPane()Ljavax/swing/JPanel;
+==
+setSize java.awt.Window#setSize(II)V
+setTitle java.awt.Frame#setTitle(Ljava/lang/String;)V
+getContentPane javax.swing.JFrame#getContentPane()Ljava/awt/Container;
+setLayout java.awt.Container#setLayout(Ljava/awt/LayoutManager;)V
+setContentPane javax.swing.JFrame#setContentPane(Ljava/awt/Container;)V

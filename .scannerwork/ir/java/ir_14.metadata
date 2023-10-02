@@ -1,0 +1,14 @@
+dataAccess.DataAccess#setResult(Ldomain/Question;Ldomain/Forecast;)V
+==
+getQuestionNumber domain.Question#getQuestionNumber()Ljava/lang/Integer;
+getFrNum domain.Forecast#getFrNum()Ljava/lang/Integer;
+setResult domain.Question#setResult(Ldomain/Forecast;)V
+getBet domain.Bet#getBet()F
+toString domain.Question#toString()Ljava/lang/String;
+println java.io.PrintStream#println(Ljava/lang/String;)V
+getBets domain.Forecast#getBets()Ljava/util/Vector;
+getWallet domain.User#getWallet()F
+getUsr domain.Bet#getUsr()Ldomain/User;
+getWinrate domain.Forecast#getWinrate()F
+setWallet domain.User#setWallet(F)V
+toString domain.Forecast#toString()Ljava/lang/String;

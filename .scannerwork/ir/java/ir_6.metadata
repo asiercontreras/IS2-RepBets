@@ -1,0 +1,8 @@
+dataAccess.DataAccess#createForecast(Ljava/lang/String;FLdomain/Question;)Ldomain/Forecast;
+exceptions.ObjectAlreadyExistException#<init>(Ljava/lang/String;)V
+exceptions.ObjectAlreadyExistException#instance-init#
+==
+getQuestionNumber domain.Question#getQuestionNumber()Ljava/lang/Integer;
+doesForecastExist domain.Question#doesForecastExist(Ljava/lang/String;)Z
+addForecast domain.Question#addForecast(Ljava/lang/String;F)Ldomain/Forecast;
+println java.io.PrintStream#println(Ljava/lang/String;)V

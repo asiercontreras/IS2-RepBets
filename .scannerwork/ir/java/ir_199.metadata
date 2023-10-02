@@ -1,0 +1,3 @@
+gui.ApplicationLauncher#launchInit()V
+==
+setVisible java.awt.Window#setVisible(Z)V

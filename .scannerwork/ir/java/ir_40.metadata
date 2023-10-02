@@ -1,0 +1,11 @@
+gui.WalletGUI#<init>()V
+java.awt.Dimension#<init>(II)V
+java.awt.Dimension#instance-init#
+gui.WalletGUI#getWalletPanel()Ljavax/swing/JPanel;
+==
+add java.awt.Container#add(Ljava/awt/Component;)Ljava/awt/Component;
+revalidate java.awt.Component#revalidate()V
+getContentPane javax.swing.JFrame#getContentPane()Ljava/awt/Container;
+repaint java.awt.Component#repaint()V
+setSize java.awt.Window#setSize(Ljava/awt/Dimension;)V
+removeAll java.awt.Container#removeAll()V

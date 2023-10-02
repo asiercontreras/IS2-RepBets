@@ -1,0 +1,92 @@
+
++domain.Forecast#equals(Ljava/lang/Object;)ZT
+J/C:/Users/Asier/Desktop/IS2/IS2-RepBets/src/main/java/domain/Forecast.javah h("6"7"9*!
+2nr n(v"
+nk n(w
+""*ò
+3n? n(Cîë
+n? n(Q
+%5domain.Question".domain.Forecast#getQuestion()Ldomain/Question;*/
+
+__unknown_file (
+domain.Forecast2getQuestion()óî
+nY n(h
+%6domain.Question".domain.Forecast#getQuestion()Ldomain/Question;*2
+
+__unknown_file (
+
+fdomain.Forecast2getQuestion()œÃ
+n? n(i
+%7boolean"+domain.Question#equals(Ljava/lang/Object;)Z*3
+
+__unknown_file (
+
+%5domain.Question*3
+
+__unknown_file (
+
+%6domain.Question2equals(Ljava/lang/Object;)*
+2
+1*ä
+4m  m(!]
+[
+m m("
+fdomain.Forecast"__id*3
+
+__unknown_file (
+
+ojava.lang.Objectúô
+n n( 
+%2java.lang.String"2domain.Forecast#getDescription()Ljava/lang/String;*/
+
+__unknown_file (
+domain.Forecast2getDescription()üú
+n( n(:
+%3java.lang.String"2domain.Forecast#getDescription()Ljava/lang/String;*2
+
+__unknown_file (
+
+fdomain.Forecast2getDescription()“œ
+n n(;
+%4boolean",java.lang.String#equals(Ljava/lang/Object;)Z*4
+
+__unknown_file (
+
+%2java.lang.String*4
+
+__unknown_file (
+
+%3java.lang.String2equals(Ljava/lang/Object;)*
+3
+1*!
+5k3 k(8"
+k, k(9
+""*Ω
+6k k(ìê
+k k(
+%0java.lang.Class",java.lang.Object#getClass()Ljava/lang/Class;*3
+
+__unknown_file (
+
+ojava.lang.Object2
+getClass()èå
+k k(*
+%1java.lang.Class",java.lang.Object#getClass()Ljava/lang/Class;*/
+
+__unknown_file (
+domain.Forecast2
+getClass()*
+4
+5*!
+7j j(""
+j j(#
+""*!
+9i i(!"
+i i("
+""*!
+1o o("
+o o(
+"":!
+h h("
+ojava.lang.ObjectB
+domain.ForecastHP

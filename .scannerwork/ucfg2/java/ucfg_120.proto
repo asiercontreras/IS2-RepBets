@@ -1,0 +1,54 @@
+
+Htest.businessLogic.TestFacadeImplementation#removeEvent(Ldomain/Event;)Zp
+f/C:/Users/Asier/Desktop/IS2/IS2-RepBets/src/test/java/test/businessLogic/TestFacadeImplementation.java ("1*Ü
+1 (ô
+ñ
+ ($
+%0test.dataAccess.TestDataAccess"__id*^
+
+__unknown_file (B*@-
++test.businessLogic.TestFacadeImplementation"
+dbManagerTestçä
+ (
+
+%1void"&test.dataAccess.TestDataAccess#open()V*B
+
+__unknown_file (&
+$
+%0test.dataAccess.TestDataAccess2open()ô
+ñ
+ ($
+%2test.dataAccess.TestDataAccess"__id*^
+
+__unknown_file (B*@-
++test.businessLogic.TestFacadeImplementation"
+dbManagerTestÏÈ
+ (*
+%3boolean";test.dataAccess.TestDataAccess#removeEvent(Ldomain/Event;)Z*B
+
+__unknown_file (&
+$
+%2test.dataAccess.TestDataAccess*0
+
+__unknown_file (
+
+evdomain.Event2removeEvent(Ldomain/Event;)ô
+ñ
+ ($
+%4test.dataAccess.TestDataAccess"__id*^
+
+__unknown_file (B*@-
++test.businessLogic.TestFacadeImplementation"
+dbManagerTestèå
+ (
+
+%5void"'test.dataAccess.TestDataAccess#close()V*B
+
+__unknown_file (&
+$
+%4test.dataAccess.TestDataAccess2close()"
+ (
+"":
+ (%
+evdomain.EventB/-
++test.businessLogic.TestFacadeImplementationHP

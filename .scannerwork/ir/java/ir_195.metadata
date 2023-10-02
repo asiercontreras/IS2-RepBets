@@ -1,0 +1,5 @@
+gui.ApplicationLauncher#launchMainGUI(LbusinessLogic/BLFacade;)V
+gui.MainGUI#instance-init#
+gui.MainGUI#<init>()V
+==
+setVisible java.awt.Window#setVisible(Z)V

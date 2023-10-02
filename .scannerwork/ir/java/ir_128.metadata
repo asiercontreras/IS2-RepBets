@@ -1,0 +1,5 @@
+domain.User#addCard(Ljava/lang/String;ILjava/lang/String;)Ldomain/Card;
+domain.Card#instance-init#
+domain.Card#<init>(Ldomain/User;Ljava/lang/String;ILjava/lang/String;)V
+==
+add java.util.Vector#add(Ljava/lang/Object;)Z

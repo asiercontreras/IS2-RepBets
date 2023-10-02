@@ -1,0 +1,65 @@
+
+6domain.Forecast#findBet(Ldomain/Forecast;)Ldomain/Bet;T
+J/C:/Users/Asier/Desktop/IS2/IS2-RepBets/src/main/java/domain/Forecast.java] ]("5*Â
+2^ ^(G
+E
+^ ^(
+b
+domain.Bet"__id*"
+
+__unknown_file (
+""Ñ
+Å
+^ ^(
+b
+domain.Bet"
+__arrayGet*4
+
+__unknown_file (
+
+%0java.util.Vector*"
+
+__unknown_file (
+""*
+4
+1*,
+3_, _(-"
+_% _(.
+
+b
+domain.Bet*Í
+4_ _(Ä~
+_ _(
+%1domain.Forecast"#domain.Bet#getFr()Ldomain/Forecast;*-
+
+__unknown_file (
+
+b
+domain.Bet2getFr()œÃ
+_ _(#
+%2boolean"+domain.Forecast#equals(Ljava/lang/Object;)Z*3
+
+__unknown_file (
+
+%1domain.Forecast*3
+
+__unknown_file (
+
+frdomain.Forecast2equals(Ljava/lang/Object;)*
+2
+3*y
+5^ ^(e
+c
+^ ^(
+%0java.util.Vector"__id*9
+
+__unknown_file (*
+domain.Forecast"
+bets*
+2*!
+1a a("
+a a(
+"":!
+] ]("
+frdomain.ForecastB
+domain.ForecastH

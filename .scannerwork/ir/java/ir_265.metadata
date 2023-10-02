@@ -1,0 +1,26 @@
+gui.MainGUI#getBtnChangeProfile()Ljavax/swing/JButton;
+java.lang.Class#getResource(Ljava/lang/String;)Ljava/net/URL;
+javax.swing.JButton#<init>()V
+javax.swing.ImageIcon#<init>([B)V
+java.awt.Cursor#getPredefinedCursor(I)Ljava/awt/Cursor;
+javax.swing.ImageIcon#instance-init#
+java.lang.Object#getClass()Ljava/lang/Class;
+javax.swing.ImageIcon#<init>(Ljava/awt/Image;)V
+javax.swing.ImageIcon#<init>(Ljava/net/URL;)V
+java.awt.Font#<init>(Ljava/lang/String;II)V
+java.awt.Font#instance-init#
+javax.swing.BorderFactory#createEmptyBorder()Ljavax/swing/border/Border;
+gui.ApplicationLauncher#getBusinessLogic()LbusinessLogic/BLFacade;
+javax.swing.JButton#instance-init#
+==
+setBorder javax.swing.JComponent#setBorder(Ljavax/swing/border/Border;)V
+getImage javax.swing.ImageIcon#getImage()Ljava/awt/Image;
+setFont javax.swing.JComponent#setFont(Ljava/awt/Font;)V
+setContentAreaFilled javax.swing.AbstractButton#setContentAreaFilled(Z)V
+getCurrentUser businessLogic.BLFacade#getCurrentUser()Ldomain/User;
+getScaledInstance java.awt.Image#getScaledInstance(III)Ljava/awt/Image;
+setIcon javax.swing.AbstractButton#setIcon(Ljavax/swing/Icon;)V
+addActionListener javax.swing.AbstractButton#addActionListener(Ljava/awt/event/ActionListener;)V
+getProfile_img domain.User#getProfile_img()[B
+setCursor java.awt.Component#setCursor(Ljava/awt/Cursor;)V
+setBounds java.awt.Component#setBounds(IIII)V

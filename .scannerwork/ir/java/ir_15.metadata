@@ -1,0 +1,4 @@
+dataAccess.DataAccess#getQuestionForecasts(Ldomain/Question;)Ljava/util/Vector;
+==
+getQuestionNumber domain.Question#getQuestionNumber()Ljava/lang/Integer;
+getForecasts domain.Question#getForecasts()Ljava/util/Vector;

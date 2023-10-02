@@ -1,0 +1,4 @@
+domain.Forecast#<init>(Ljava/lang/Integer;Ljava/lang/String;FLdomain/Question;)V
+==
+getBetMinimum domain.Question#getBetMinimum()F
+<init> java.lang.Object#<init>()V

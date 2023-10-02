@@ -1,0 +1,6 @@
+test.dataAccess.TestDataAccess#existQuestion(Ldomain/Event;Ldomain/Question;)Z
+==
+println java.io.PrintStream#println(Ljava/lang/String;)V
+DoesQuestionExists domain.Event#DoesQuestionExists(Ljava/lang/String;)Z
+getEventNumber domain.Event#getEventNumber()Ljava/lang/Integer;
+getQuestion domain.Question#getQuestion()Ljava/lang/String;

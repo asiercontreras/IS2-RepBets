@@ -1,0 +1,11 @@
+gui.InitGUI#getJContentPane()Ljavax/swing/JPanel;
+gui.InitGUI#getJButtonEvent()Ljavax/swing/JButton;
+gui.InitGUI#getPanel()Ljavax/swing/JPanel;
+javax.swing.JPanel#<init>()V
+gui.InitGUI#getJButtonSignUp()Ljavax/swing/JButton;
+gui.InitGUI#getLblNewLabel()Ljavax/swing/JLabel;
+gui.InitGUI#getJButtonSignIn()Ljavax/swing/JButton;
+javax.swing.JPanel#instance-init#
+==
+add java.awt.Container#add(Ljava/awt/Component;)Ljava/awt/Component;
+setLayout java.awt.Container#setLayout(Ljava/awt/LayoutManager;)V

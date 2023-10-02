@@ -1,0 +1,4 @@
+domain.User#findBet(Ldomain/Forecast;)Ldomain/Bet;
+==
+getFr domain.Bet#getFr()Ldomain/Forecast;
+equals domain.Forecast#equals(Ljava/lang/Object;)Z

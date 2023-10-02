@@ -1,0 +1,8 @@
+gui.EditarPerfilGUI#<init>()V
+java.awt.Dimension#<init>(II)V
+java.awt.Dimension#instance-init#
+gui.EditarPerfilGUI#setShowProfile()V
+==
+setResizable java.awt.Frame#setResizable(Z)V
+setSize java.awt.Window#setSize(Ljava/awt/Dimension;)V
+setDefaultCloseOperation javax.swing.JFrame#setDefaultCloseOperation(I)V

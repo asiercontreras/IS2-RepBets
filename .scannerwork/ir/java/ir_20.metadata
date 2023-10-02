@@ -1,0 +1,8 @@
+dataAccess.DataAccess#guardarCambios(Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;Ljava/lang/String;Ljava/lang/String;[B)Ldomain/User;
+==
+setPasswd domain.User#setPasswd(Ljava/lang/String;)V
+println java.io.PrintStream#println(Ljava/lang/String;)V
+setProfile_img domain.User#setProfile_img([B)V
+setSurnames domain.User#setSurnames(Ljava/lang/String;)V
+setName domain.User#setName(Ljava/lang/String;)V
+setBirthdate domain.User#setBirthdate(Ljava/util/Date;)V

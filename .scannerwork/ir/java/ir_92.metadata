@@ -1,0 +1,5 @@
+domain.Question#equals(Ljava/lang/Object;)Z
+java.lang.Object#getClass()Ljava/lang/Class;
+java.lang.Integer#equals(Ljava/lang/Object;)Z
+==
+getQuestionNumber domain.Question#getQuestionNumber()Ljava/lang/Integer;

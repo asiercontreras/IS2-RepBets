@@ -1,16 +1,18 @@
 
-@configuration.ConfigXML#getBusinessLogicName()Ljava/lang/String;S
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.javaö ö(#"1*ˆ
-1S
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.javaõ	 õ(™
-ß
-S
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.javaõ	 õ(
-%0java.lang.String"__id*2*0
-configuration.ConfigXML"
-businessLogicName"o
-S
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.javaõ õ(
-
-%0java.lang.StringB
-configuration.ConfigXML
+,domain.Question#getResult()Ldomain/Forecast;V
+J/C:/Users/Asier/Desktop/IS2/IS2-RepBets/src/main/java/domain/Question.javaÄ Ä("1*†
+1
+Å	 Å(h
+f
+
+Å	 Å(
+%0domain.Forecast"__id*;
+
+__unknown_file (*
+domain.Question"
+result"%
+
+Å Å(
+
+%0domain.ForecastB
+domain.QuestionH

@@ -1,0 +1,9 @@
+gui.LoginGUI#getPanel()Ljavax/swing/JPanel;
+gui.LoginGUI#getRdbtnNewRadioButton_2()Ljavax/swing/JRadioButton;
+gui.LoginGUI#getRdbtnNewRadioButton_1()Ljavax/swing/JRadioButton;
+javax.swing.JPanel#<init>()V
+gui.LoginGUI#getRdbtnNewRadioButton()Ljavax/swing/JRadioButton;
+javax.swing.JPanel#instance-init#
+==
+add java.awt.Container#add(Ljava/awt/Component;)Ljava/awt/Component;
+setBounds java.awt.Component#setBounds(IIII)V

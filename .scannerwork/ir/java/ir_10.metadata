@@ -1,0 +1,5 @@
+dataAccess.DataAccess#getUser(Ljava/lang/String;)Ldomain/User;
+exceptions.UserNotFound#instance-init#
+exceptions.UserNotFound#<init>(Ljava/lang/String;)V
+==
+println java.io.PrintStream#println(Ljava/lang/String;)V

@@ -1,0 +1,6 @@
+businessLogic.BLFacadeImplementation#addMoney(F)F
+==
+close dataAccess.DataAccess#close()V
+getCurrentUser businessLogic.BLFacadeImplementation#getCurrentUser()Ldomain/User;
+open dataAccess.DataAccess#open(Z)V
+addMoney dataAccess.DataAccess#addMoney(Ldomain/User;F)F

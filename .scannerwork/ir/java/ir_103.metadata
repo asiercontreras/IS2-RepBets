@@ -1,0 +1,8 @@
+gui.LookBetsGUI#instance-init#
+javax.swing.JTable#<init>()V
+java.util.ResourceBundle#getString(Ljava/lang/String;)Ljava/lang/String;
+java.util.ResourceBundle#getBundle(Ljava/lang/String;)Ljava/util/ResourceBundle;
+javax.swing.JTable#instance-init#
+javax.swing.JScrollPane#instance-init#
+gui.ApplicationLauncher#getBusinessLogic()LbusinessLogic/BLFacade;
+javax.swing.JScrollPane#<init>()V

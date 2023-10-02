@@ -1,0 +1,47 @@
+
+,domain.Forecast#toString()Ljava/lang/String;T
+J/C:/Users/Asier/Desktop/IS2/IS2-RepBets/src/main/java/domain/Forecast.javad d("1*ß
+1e e(l
+j
+e e(
+%0java.lang.String"__id*@
+
+__unknown_file ($*"
+domain.Forecast"
+descriptionu
+s
+e e(3
+%1java.lang.String"__concat*$
+e e(
+
+%0java.lang.String*
+e" e(3
+; minimum bet: h
+f
+e e(E
+%2java.lang.String"__concat*$
+e e(3
+
+%1java.lang.String*
+e6 e(E
+""q
+o
+e e(U
+%3java.lang.String"__concat*$
+e e(E
+
+%2java.lang.String*
+eH e(U
+; winrate: h
+f
+e e(d
+%4java.lang.String"__concat*$
+e e(U
+
+%3java.lang.String*
+eX e(d
+"""$
+e e(e
+
+%4java.lang.StringB
+domain.ForecastH

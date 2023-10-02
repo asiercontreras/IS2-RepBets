@@ -1,0 +1,6 @@
+dataAccess.DataAccess#closeEvent(Ldomain/Event;)V
+==
+println java.io.PrintStream#println(Ljava/lang/String;)V
+getDescription domain.Event#getDescription()Ljava/lang/String;
+getEventNumber domain.Event#getEventNumber()Ljava/lang/Integer;
+setClosed domain.Event#setClosed(Z)V

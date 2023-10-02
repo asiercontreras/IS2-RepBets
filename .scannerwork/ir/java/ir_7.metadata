@@ -1,0 +1,18 @@
+dataAccess.DataAccess#createBet(FLdomain/User;Ldomain/Forecast;)F
+exceptions.NotEnoughMoneyException#<init>(Ljava/lang/String;)V
+exceptions.NotEnoughMoneyException#instance-init#
+domain.Bet#instance-init#
+domain.Bet#<init>(FLdomain/User;Ldomain/Forecast;)V
+==
+setBet domain.Bet#setBet(F)V
+getFrNum domain.Forecast#getFrNum()Ljava/lang/Integer;
+findBet domain.User#findBet(Ldomain/Forecast;)Ldomain/Bet;
+getQuestion domain.Forecast#getQuestion()Ldomain/Question;
+getBet domain.Bet#getBet()F
+addBet domain.Forecast#addBet(Ldomain/Bet;)V
+println java.io.PrintStream#println(Ljava/lang/String;)V
+getDni domain.User#getDni()Ljava/lang/String;
+addBet domain.User#addBet(Ldomain/Bet;)V
+getWallet domain.User#getWallet()F
+getId domain.Bet#getId()Ljava/lang/Integer;
+setWallet domain.User#setWallet(F)V
