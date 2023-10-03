@@ -1,0 +1,387 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-10-02 18:53:58 #1 store] 
+Database 'C:\Users\Asier\Desktop\IS2\IS2-RepBets\src\main\resources\bets.temp' is opened by 18484@LAPTOP-2LSGMS7V
+
+[2023-10-02 18:53:59 #2 type.registry] 
+New type domain.Question
+
+[2023-10-02 18:53:59 #3 type] 
+Type domain.Question is not enhanced.
+
+[2023-10-02 18:53:59 #4 type.registry] 
+New type domain.Forecast
+
+[2023-10-02 18:53:59 #5 type.registry] 
+New type java.util.Vector<domain.Forecast>
+
+[2023-10-02 18:53:59 #6 type.registry] 
+New type domain.Event
+
+[2023-10-02 18:53:59 #7 type] 
+Type domain.Forecast is not enhanced.
+
+[2023-10-02 18:53:59 #8 type.registry] 
+New type domain.Bet
+
+[2023-10-02 18:53:59 #9 type.registry] 
+New type java.util.Vector<domain.Bet>
+
+[2023-10-02 18:53:59 #10 type] 
+Type domain.Event is not enhanced.
+
+[2023-10-02 18:53:59 #11 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2023-10-02 18:53:59 #12 type] 
+Type domain.Bet is not enhanced.
+
+[2023-10-02 18:53:59 #13 type.registry] 
+New type domain.User
+
+[2023-10-02 18:53:59 #14 type] 
+Type domain.User is not enhanced.
+
+[2023-10-02 18:53:59 #15 type.registry] 
+New type byte[]
+
+[2023-10-02 18:53:59 #16 type.registry] 
+New type domain.Card
+
+[2023-10-02 18:53:59 #17 type.registry] 
+New type java.util.Vector<domain.Card>
+
+[2023-10-02 18:53:59 #18 type] 
+Type domain.Card is not enhanced.
+
+[2023-10-02 18:53:59 #19 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-10-02 19:02:37 #1 store] 
+Database 'C:\Users\Asier\Desktop\IS2\IS2-RepBets\src\main\resources\bets.temp' is opened by 1856@LAPTOP-2LSGMS7V
+
+[2023-10-02 19:02:37 #2 type.registry] 
+New type domain.Question
+
+[2023-10-02 19:02:37 #3 type] 
+Type domain.Question is not enhanced.
+
+[2023-10-02 19:02:37 #4 type.registry] 
+New type domain.Forecast
+
+[2023-10-02 19:02:37 #5 type.registry] 
+New type java.util.Vector<domain.Forecast>
+
+[2023-10-02 19:02:37 #6 type.registry] 
+New type domain.Event
+
+[2023-10-02 19:02:37 #7 type] 
+Type domain.Forecast is not enhanced.
+
+[2023-10-02 19:02:37 #8 type.registry] 
+New type domain.Bet
+
+[2023-10-02 19:02:37 #9 type.registry] 
+New type java.util.Vector<domain.Bet>
+
+[2023-10-02 19:02:37 #10 type] 
+Type domain.Event is not enhanced.
+
+[2023-10-02 19:02:37 #11 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2023-10-02 19:02:37 #12 type] 
+Type domain.Bet is not enhanced.
+
+[2023-10-02 19:02:37 #13 type.registry] 
+New type domain.User
+
+[2023-10-02 19:02:37 #14 type] 
+Type domain.User is not enhanced.
+
+[2023-10-02 19:02:37 #15 type.registry] 
+New type byte[]
+
+[2023-10-02 19:02:37 #16 type.registry] 
+New type domain.Card
+
+[2023-10-02 19:02:37 #17 type.registry] 
+New type java.util.Vector<domain.Card>
+
+[2023-10-02 19:02:37 #18 type] 
+Type domain.Card is not enhanced.
+
+[2023-10-02 19:02:37 #19 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-10-02 19:20:59 #1 store] 
+Database 'C:\Users\Asier\Desktop\IS2\IS2-RepBets\src\main\resources\bets.temp' is opened by 1396@LAPTOP-2LSGMS7V
+
+[2023-10-02 19:20:59 #2 type.registry] 
+New type domain.Question
+
+[2023-10-02 19:20:59 #3 type] 
+Type domain.Question is not enhanced.
+
+[2023-10-02 19:20:59 #4 type.registry] 
+New type domain.Forecast
+
+[2023-10-02 19:20:59 #5 type.registry] 
+New type java.util.Vector<domain.Forecast>
+
+[2023-10-02 19:20:59 #6 type.registry] 
+New type domain.Event
+
+[2023-10-02 19:20:59 #7 type] 
+Type domain.Forecast is not enhanced.
+
+[2023-10-02 19:20:59 #8 type.registry] 
+New type domain.Bet
+
+[2023-10-02 19:20:59 #9 type.registry] 
+New type java.util.Vector<domain.Bet>
+
+[2023-10-02 19:20:59 #10 type] 
+Type domain.Event is not enhanced.
+
+[2023-10-02 19:20:59 #11 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2023-10-02 19:20:59 #12 type] 
+Type domain.Bet is not enhanced.
+
+[2023-10-02 19:20:59 #13 type.registry] 
+New type domain.User
+
+[2023-10-02 19:20:59 #14 type] 
+Type domain.User is not enhanced.
+
+[2023-10-02 19:20:59 #15 type.registry] 
+New type byte[]
+
+[2023-10-02 19:20:59 #16 type.registry] 
+New type domain.Card
+
+[2023-10-02 19:20:59 #17 type.registry] 
+New type java.util.Vector<domain.Card>
+
+[2023-10-02 19:20:59 #18 type] 
+Type domain.Card is not enhanced.
+
+[2023-10-02 19:20:59 #19 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-10-02 22:56:21 #1 store] 
+Database 'C:\Users\Asier\Desktop\IS2\IS2-RepBets\src\main\resources\bets.temp' has been recovered (tr. 1-11)
+
+[2023-10-02 22:56:21 #2 store] 
+Database 'C:\Users\Asier\Desktop\IS2\IS2-RepBets\src\main\resources\bets.temp' is opened by 8300@LAPTOP-2LSGMS7V
+
+[2023-10-02 22:56:21 #3 type] 
+Type domain.Question is not enhanced.
+
+[2023-10-02 22:56:21 #4 type] 
+Type domain.Forecast is not enhanced.
+
+[2023-10-02 22:56:21 #5 type] 
+Type domain.Event is not enhanced.
+
+[2023-10-02 22:56:21 #6 type] 
+Type domain.Bet is not enhanced.
+
+[2023-10-02 22:56:21 #7 type] 
+Type domain.User is not enhanced.
+
+[2023-10-02 22:56:21 #8 type] 
+Type domain.Card is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-10-02 22:56:45 #1 store] 
+Database 'C:\Users\Asier\Desktop\IS2\IS2-RepBets\src\main\resources\bets.temp' is opened by 8492@LAPTOP-2LSGMS7V
+
+[2023-10-02 22:56:46 #2 type] 
+Type domain.Question is not enhanced.
+
+[2023-10-02 22:56:46 #3 type] 
+Type domain.Forecast is not enhanced.
+
+[2023-10-02 22:56:46 #4 type] 
+Type domain.Event is not enhanced.
+
+[2023-10-02 22:56:46 #5 type] 
+Type domain.Bet is not enhanced.
+
+[2023-10-02 22:56:46 #6 type] 
+Type domain.User is not enhanced.
+
+[2023-10-02 22:56:46 #7 type] 
+Type domain.Card is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-10-02 22:57:30 #1 store] 
+Database 'C:\Users\Asier\Desktop\IS2\IS2-RepBets\src\main\resources\bets.temp' is opened by 7092@LAPTOP-2LSGMS7V
+
+[2023-10-02 22:57:30 #2 type] 
+Type domain.Question is not enhanced.
+
+[2023-10-02 22:57:30 #3 type] 
+Type domain.Forecast is not enhanced.
+
+[2023-10-02 22:57:30 #4 type] 
+Type domain.Event is not enhanced.
+
+[2023-10-02 22:57:30 #5 type] 
+Type domain.Bet is not enhanced.
+
+[2023-10-02 22:57:30 #6 type] 
+Type domain.User is not enhanced.
+
+[2023-10-02 22:57:30 #7 type] 
+Type domain.Card is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-10-02 23:10:11 #1 store] 
+Database 'C:\Users\Asier\Desktop\IS2\IS2-RepBets\src\main\resources\bets.temp' is opened by 7284@LAPTOP-2LSGMS7V
+
+[2023-10-02 23:10:11 #2 type] 
+Type domain.Question is not enhanced.
+
+[2023-10-02 23:10:11 #3 type] 
+Type domain.Forecast is not enhanced.
+
+[2023-10-02 23:10:11 #4 type] 
+Type domain.Event is not enhanced.
+
+[2023-10-02 23:10:11 #5 type] 
+Type domain.Bet is not enhanced.
+
+[2023-10-02 23:10:11 #6 type] 
+Type domain.User is not enhanced.
+
+[2023-10-02 23:10:11 #7 type] 
+Type domain.Card is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-10-02 23:10:33 #1 store] 
+Database 'C:\Users\Asier\Desktop\IS2\IS2-RepBets\src\main\resources\bets.temp' is opened by 6980@LAPTOP-2LSGMS7V
+
+[2023-10-02 23:10:33 #2 type] 
+Type domain.Question is not enhanced.
+
+[2023-10-02 23:10:33 #3 type] 
+Type domain.Forecast is not enhanced.
+
+[2023-10-02 23:10:33 #4 type] 
+Type domain.Event is not enhanced.
+
+[2023-10-02 23:10:33 #5 type] 
+Type domain.Bet is not enhanced.
+
+[2023-10-02 23:10:33 #6 type] 
+Type domain.User is not enhanced.
+
+[2023-10-02 23:10:33 #7 type] 
+Type domain.Card is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-10-02 23:10:41 #1 store] 
+Database 'C:\Users\Asier\Desktop\IS2\IS2-RepBets\src\main\resources\bets.temp' is opened by 17232@LAPTOP-2LSGMS7V
+
+[2023-10-02 23:10:42 #2 type] 
+Type domain.Question is not enhanced.
+
+[2023-10-02 23:10:42 #3 type] 
+Type domain.Forecast is not enhanced.
+
+[2023-10-02 23:10:42 #4 type] 
+Type domain.Event is not enhanced.
+
+[2023-10-02 23:10:42 #5 type] 
+Type domain.Bet is not enhanced.
+
+[2023-10-02 23:10:42 #6 type] 
+Type domain.User is not enhanced.
+
+[2023-10-02 23:10:42 #7 type] 
+Type domain.Card is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-10-02 23:10:58 #1 store] 
+Database 'C:\Users\Asier\Desktop\IS2\IS2-RepBets\src\main\resources\bets.temp' is opened by 14604@LAPTOP-2LSGMS7V
+
+[2023-10-02 23:10:58 #2 type] 
+Type domain.Question is not enhanced.
+
+[2023-10-02 23:10:58 #3 type] 
+Type domain.Forecast is not enhanced.
+
+[2023-10-02 23:10:58 #4 type] 
+Type domain.Event is not enhanced.
+
+[2023-10-02 23:10:58 #5 type] 
+Type domain.Bet is not enhanced.
+
+[2023-10-02 23:10:58 #6 type] 
+Type domain.User is not enhanced.
+
+[2023-10-02 23:10:58 #7 type] 
+Type domain.Card is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-10-02 23:11:05 #1 store] 
+Database 'C:\Users\Asier\Desktop\IS2\IS2-RepBets\src\main\resources\bets.temp' is opened by 652@LAPTOP-2LSGMS7V
+
+[2023-10-02 23:11:05 #2 type] 
+Type domain.Question is not enhanced.
+
+[2023-10-02 23:11:05 #3 type] 
+Type domain.Forecast is not enhanced.
+
+[2023-10-02 23:11:05 #4 type] 
+Type domain.Event is not enhanced.
+
+[2023-10-02 23:11:05 #5 type] 
+Type domain.Bet is not enhanced.
+
+[2023-10-02 23:11:05 #6 type] 
+Type domain.User is not enhanced.
+
+[2023-10-02 23:11:05 #7 type] 
+Type domain.Card is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-10-02 23:11:08 #1 store] 
+Database 'C:\Users\Asier\Desktop\IS2\IS2-RepBets\src\main\resources\bets.temp' is opened by 12728@LAPTOP-2LSGMS7V
+
+[2023-10-02 23:11:08 #2 type] 
+Type domain.Question is not enhanced.
+
+[2023-10-02 23:11:08 #3 type] 
+Type domain.Forecast is not enhanced.
+
+[2023-10-02 23:11:08 #4 type] 
+Type domain.Event is not enhanced.
+
+[2023-10-02 23:11:08 #5 type] 
+Type domain.Bet is not enhanced.
+
+[2023-10-02 23:11:08 #6 type] 
+Type domain.User is not enhanced.
+
+[2023-10-02 23:11:08 #7 type] 
+Type domain.Card is not enhanced.
+
