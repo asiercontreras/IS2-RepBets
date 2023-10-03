@@ -14,6 +14,7 @@ import domain.Event;
 import domain.Forecast;
 import domain.Question;
 import domain.User;
+import domain.Bet;
 import exceptions.ObjectAlreadyExistException;
 import exceptions.QuestionAlreadyExist;
 
@@ -124,36 +125,27 @@ public class TestDataAccess {
 	        return fr;
 		}
 		public boolean removeUserDado(User usr) {
+			
 			if(db.find(User.class, usr.getDni()) != null) {
+				
 				db.getTransaction().begin();
 				db.remove(usr);
+			
 		        db.getTransaction().commit();
 		        return true;
 			} else
 			return false;
 		}
-		public boolean removeForecastDado(Forecast  fr) {
-			if(db.find(User.class, usr.getDni()) != null) {
+		
+		public boolean removeBet(Bet b)  {
+				if(db.find(Bet.class, b.getId()) != null) {
 				db.getTransaction().begin();
-				db.remove(usr);
+				db.remove(b);
+			
 		        db.getTransaction().commit();
 		        return true;
 			} else
 			return false;
-			
-			 System.out.println(">> DataAccess: CreateForecast=> description: "+description+", winrate: "+winrate);
-
-		        Question q = db.find(Question.class, question.getQuestionNumber());
-
-		        if(q.doesForecastExist(description)) throw new ObjectAlreadyExistException("The forecast already exist for that question");
-
-		        db.getTransaction().begin();
-		        Forecast fr = q.addForecast(description, winrate);
-		        db.persist(q);
-		        db.getTransaction().commit();
-
-		        return fr;
-
 		}
 }
 
