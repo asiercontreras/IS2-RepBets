@@ -106,12 +106,7 @@ public class CreateBetDAWTest {
 		}
 		Event ev111 = sut.createEvent("Gana Atleti", UtilDate.newDate(year, month, 17));
 		q111 = ev111.addQuestion("¿Quién ganará el partido?", 1f);
-		// q11 = new Question(1, "¿Quién ganará el partido?", 1f, ev11);
-
 		float expectedWalletValue =190.0f;
-
-		// String name, String surnames, String dni, Date birthdate, String passwd,
-		// boolean isAdmin
 		User user2 = sut.createUser("asier", "contreras", "24", new Date(2000, 5, 1), "11", false);
 		user2.setWallet(5.0f);
 		Forecast forecast2 = sut.createForecast(description, winrate, q111);
@@ -136,7 +131,7 @@ public class CreateBetDAWTest {
 	@Test
 	public void testCreateSecondBetWithSufficientFunds() throws NotEnoughMoneyException, ObjectAlreadyExistException {
 		// Configura el escenario de prueba con un usuario y una previsión que tenga
-		// suficiente dinero en la billetera.
+		// suficiente dinero en la billetera, pero ya habia una apuesta previa.
 		Integer frNum = 1111;
 		String description = "Atleti";
 		float winrate = 1.2f;
@@ -153,24 +148,11 @@ public class CreateBetDAWTest {
 		Event ev11 = sut.createEvent("Gana Atleti", UtilDate.newDate(year, month, 17));
 		q11 = ev11.addQuestion("¿Quién ganará el partido?", 1f);
 		float expectedWalletValue = 190.0f;
-
-		// String name, String surnames, String dni, Date birthdate, String passwd,
-		// boolean isAdmin
 		User user1 = sut.createUser("asier", "contreras", "24", new Date(2000, 5, 1), "11", false);
 		user1.setWallet(200f);
 		Forecast forecast1 = sut.createForecast(description, winrate, q11);
-		// sut.createForecast("Atletico", 1.2f, q11);
-		// sut.createForecast("Athletic", 2.2f, q11);
-		// Llama al método createBet y verifica si funciona correctamente.
 		try {
-			/*
-			 * testDA.open(); User usr1 = testDA.createBetUser(user); Forecast fr =
-			 * testDA.createBetForecast(forecast);
-			 * 
-			 * testDA.close();
-			 */
 			float newValue = sut.createBet(5.0f, user1, forecast1);
-
 			float newValue2 = sut.createBet(10.0f, user1, forecast1);
 			// Verifica que el nuevo valor de la billetera sea el esperado.
 			assertEquals(expectedWalletValue, newValue, 0.01); // Ajusta el valor esperado según tu lógica.
