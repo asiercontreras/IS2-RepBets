@@ -1,6 +1,7 @@
 package domain;
 
 import java.io.*;
+import java.util.Objects;
 import java.util.Vector;
 
 import javax.persistence.*;
@@ -181,8 +182,29 @@ public class Question implements Serializable {
 	public String toString(){
 		return questionNumber+";"+question+";"+Float.toString(betMinimum);
 	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(betMinimum, event, forecasts, question, questionNumber, result);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Question other = (Question) obj;
+		return Float.floatToIntBits(betMinimum) == Float.floatToIntBits(other.betMinimum)
+				&& Objects.equals(event, other.event) && Objects.equals(forecasts, other.forecasts)
+				&& Objects.equals(question, other.question) && Objects.equals(questionNumber, other.questionNumber)
+				&& Objects.equals(result, other.result);
+	}
 	
-    public boolean equals(Object o){
+	
+  /*  public boolean equals(Object o){
         if(o == null) return false;
         if(getClass() != o.getClass()) return false;
         if(this == o) return true;
@@ -190,5 +212,5 @@ public class Question implements Serializable {
         Question q = (Question) o;
         if(q.getQuestionNumber().equals(this.getQuestionNumber())) return true;
         return false;
-    }
+    }*/
 }

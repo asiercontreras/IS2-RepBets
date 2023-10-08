@@ -1,6 +1,7 @@
 package domain;
 
 import java.io.Serializable;
+import java.util.Objects;
 import java.util.Vector;
 
 import javax.persistence.*;
@@ -101,7 +102,29 @@ public class Forecast implements Serializable {
         return this.description + "; minimum bet: " + this.minimumBet + "; winrate: " + this.winrate;
     }
 
-    public boolean equals(Object o){
+	@Override
+	public int hashCode() {
+		return Objects.hash(bets, description, frNum, minimumBet, question, winrate);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Forecast other = (Forecast) obj;
+		return Objects.equals(bets, other.bets) && Objects.equals(description, other.description)
+				&& Objects.equals(frNum, other.frNum)
+				&& Float.floatToIntBits(minimumBet) == Float.floatToIntBits(other.minimumBet)
+				&& Objects.equals(question, other.question)
+				&& Float.floatToIntBits(winrate) == Float.floatToIntBits(other.winrate);
+	}
+    
+
+   /* public boolean equals(Object o){
         if(o == this) return true;
         if(o == null) return false;
         if(o.getClass() != this.getClass()) return false;
@@ -109,6 +132,6 @@ public class Forecast implements Serializable {
         Forecast f = (Forecast) o;
         if(this.getDescription().equals(f.getDescription()) && this.getQuestion().equals(f.getQuestion())) return true;
         return false;
-    }
+    }*/
 }
 

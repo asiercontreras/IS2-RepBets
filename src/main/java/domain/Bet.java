@@ -1,5 +1,7 @@
 package domain;
 
+import java.util.Objects;
+
 import javax.persistence.*;
 
 @Entity
@@ -55,7 +57,25 @@ public class Bet {
 		this.fr = fr;
 	}
 
-    public boolean equals(Object o){
+    @Override
+	public int hashCode() {
+		return Objects.hash(bet, fr, id, usr);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Bet other = (Bet) obj;
+		return Float.floatToIntBits(bet) == Float.floatToIntBits(other.bet) && Objects.equals(fr, other.fr)
+				&& Objects.equals(id, other.id) && Objects.equals(usr, other.usr);
+	}
+	/*
+	public boolean equals(Object o){
         if(o == this) return true;
         if(o == null) return false;
         if(o.getClass() != this.getClass()) return false;
@@ -63,6 +83,7 @@ public class Bet {
         Bet f = (Bet) o;
         if(this.fr.equals(f.getFr())) return true;
         return false;
-    }
+    }*/
+    
 }
 

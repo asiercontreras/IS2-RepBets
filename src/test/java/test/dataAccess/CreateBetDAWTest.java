@@ -26,52 +26,49 @@ public class CreateBetDAWTest {
 	// additional operations needed to execute the test
 	static TestDataAccess testDA;
 	private Event ev;
-
+	int frNum;
+	String description;
+	float winrate;
+	Question q11;
+	int month;
+	int year;
+	Event ev11;
+	
 	@Before
-	public void initialize() {
+	public void initialize() throws ObjectAlreadyExistException {
 
 		sut = new DataAccess();
 		// additional operations needed to execute the test
 		testDA = new TestDataAccess();
+		// Configura el escenario de prueba con un usuario y una previsión que tenga
+				// suficiente dinero en la billetera, pero ya habia una apuesta previa.
+				 frNum = 1111;
+				 description = "Atleti";
+				 winrate = 1.2f;
+				Question q11;
+				Calendar today = Calendar.getInstance();
 
+				 month = today.get(Calendar.MONTH);
+				month += 1;
+				 year = today.get(Calendar.YEAR);
+				if (month == 12) {
+					month = 0;
+					year += 1;
+				}
+				 ev11 = sut.createEvent("Gana Atleti", UtilDate.newDate(year, month, 17));
+				q11 = ev11.addQuestion("¿Quién ganará el partido?", 1f);
+				
 	}
 
 	@Test
 	public void testCreateBetWithSufficientFunds() throws NotEnoughMoneyException, ObjectAlreadyExistException {
-		// Configura el escenario de prueba con un usuario y una previsión que tenga
-		// suficiente dinero en la billetera.
-		Integer frNum = 1111;
-		String description = "Atleti";
-		float winrate = 1.2f;
-		Question q11;
-		Calendar today = Calendar.getInstance();
-
-		int month = today.get(Calendar.MONTH);
-		month += 1;
-		int year = today.get(Calendar.YEAR);
-		if (month == 12) {
-			month = 0;
-			year += 1;
-		}
-		Event ev11 = sut.createEvent("Gana Atleti", UtilDate.newDate(year, month, 17));
-		q11 = ev11.addQuestion("¿Quién ganará el partido?", 1f);
+		
 		float expectedWalletValue = 190.0f;
-
-		// String name, String surnames, String dni, Date birthdate, String passwd,
-		// boolean isAdmin
 		User user1 = sut.createUser("asier", "contreras", "24", new Date(2000, 5, 1), "11", false);
 		user1.setWallet(200f);
 		Forecast forecast1 = sut.createForecast(description, winrate, q11);
-		// sut.createForecast("Atletico", 1.2f, q11);
-		// sut.createForecast("Athletic", 2.2f, q11);
 		// Llama al método createBet y verifica si funciona correctamente.
 		try {
-			/*
-			 * testDA.open(); User usr1 = testDA.createBetUser(user); Forecast fr =
-			 * testDA.createBetForecast(forecast);
-			 * 
-			 * testDA.close();
-			 */
 			float newValue = sut.createBet(10.0f, user1, forecast1);
 			// Verifica que el nuevo valor de la billetera sea el esperado.
 			assertEquals(expectedWalletValue, newValue, 0.01); // Ajusta el valor esperado según tu lógica.
@@ -90,29 +87,14 @@ public class CreateBetDAWTest {
 
 	@Test // (expected = NotEnoughMoneyException.class)
 	public void testCreateBetWithInsufficientFunds() throws NotEnoughMoneyException, ObjectAlreadyExistException {
-		
-		Integer frNum = 11111;
-		String description = "Atleti";
-		float winrate = 1.2f;
-		Question q111;
-		Calendar today = Calendar.getInstance();
-
-		int month = today.get(Calendar.MONTH);
-		month += 1;
-		int year = today.get(Calendar.YEAR);
-		if (month == 12) {
-			month = 0;
-			year += 1;
-		}
-		Event ev111 = sut.createEvent("Gana Atleti", UtilDate.newDate(year, month, 17));
-		q111 = ev111.addQuestion("¿Quién ganará el partido?", 1f);
-		float expectedWalletValue =190.0f;
-		User user2 = sut.createUser("asier", "contreras", "24", new Date(2000, 5, 1), "11", false);
-		user2.setWallet(5.0f);
-		Forecast forecast2 = sut.createForecast(description, winrate, q111);
+	
+		float expectedWalletValue = 190.0f;
+		User user1 = sut.createUser("asier", "contreras", "24", new Date(2000, 5, 1), "11", false);
+		user1.setWallet(5.0f);
+		Forecast forecast1 = sut.createForecast(description, winrate, q11);
+		// Llama al método createBet y verifica si funciona correctamente.
 		try {
-			
-			float newValue = sut.createBet(20.0f, user2, forecast2);
+			float newValue = sut.createBet(10.0f, user1, forecast1);
 			// Verifica que el nuevo valor de la billetera sea el esperado.
 			assertEquals(expectedWalletValue, newValue, 0.01); // Ajusta el valor esperado según tu lógica.
 		} catch (NotEnoughMoneyException e) {
@@ -120,34 +102,18 @@ public class CreateBetDAWTest {
 		} finally {
 			// Remove the created objects in the database (cascade removing)
 			testDA.open();
-			boolean b = testDA.removeUserDado(user2);
-			testDA.removeEvent(ev111);
+			boolean b = testDA.removeUserDado(user1);
+			testDA.removeEvent(ev11);
 			testDA.close();
 
 			System.out.println("Finally " + b);
 		}
+
 	}
 	
 	@Test
 	public void testCreateSecondBetWithSufficientFunds() throws NotEnoughMoneyException, ObjectAlreadyExistException {
-		// Configura el escenario de prueba con un usuario y una previsión que tenga
-		// suficiente dinero en la billetera, pero ya habia una apuesta previa.
-		Integer frNum = 1111;
-		String description = "Atleti";
-		float winrate = 1.2f;
-		Question q11;
-		Calendar today = Calendar.getInstance();
-
-		int month = today.get(Calendar.MONTH);
-		month += 1;
-		int year = today.get(Calendar.YEAR);
-		if (month == 12) {
-			month = 0;
-			year += 1;
-		}
-		Event ev11 = sut.createEvent("Gana Atleti", UtilDate.newDate(year, month, 17));
-		q11 = ev11.addQuestion("¿Quién ganará el partido?", 1f);
-		float expectedWalletValue = 190.0f;
+		float expectedWalletValue =190.0f;
 		User user1 = sut.createUser("asier", "contreras", "24", new Date(2000, 5, 1), "11", false);
 		user1.setWallet(200f);
 		Forecast forecast1 = sut.createForecast(description, winrate, q11);
@@ -155,7 +121,7 @@ public class CreateBetDAWTest {
 			float newValue = sut.createBet(5.0f, user1, forecast1);
 			float newValue2 = sut.createBet(10.0f, user1, forecast1);
 			// Verifica que el nuevo valor de la billetera sea el esperado.
-			assertEquals(expectedWalletValue, newValue, 0.01); // Ajusta el valor esperado según tu lógica.
+			assertEquals(expectedWalletValue, newValue2, 0.01); // Ajusta el valor esperado según tu lógica.
 		} catch (NotEnoughMoneyException e) {
 			fail("El método createBet debería permitir una apuesta válida con suficiente dinero.");
 		} finally {
