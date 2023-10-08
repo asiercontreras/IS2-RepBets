@@ -125,7 +125,7 @@ public class ConfigXML {
 					  
 		  } catch (Exception e) {
 			System.out.println("Error in ConfigXML.java: problems with "+ configFile);
-		    e.printStackTrace();
+		    //e.printStackTrace();
 		  }		
 		
 	}
