@@ -1,4 +1,5 @@
 package businessLogic;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Date;
@@ -17,306 +18,319 @@ import exceptions.*;
  * It implements the business logic as a web service.
  */
 @WebService(endpointInterface = "businessLogic.BLFacade")
-public class BLFacadeImplementation  implements BLFacade {
-    DataAccess dbManager;
-    private User currentUsr = null;
+public class BLFacadeImplementation implements BLFacade {
+	DataAccess dbManager;
+	private User currentUsr = null;
 
-	public BLFacadeImplementation()  {		
-        System.out.println("Creating BLFacadeImplementation instance");
-        ConfigXML c=ConfigXML.getInstance();
+	String init = "initialize";
 
-        if (c.getDataBaseOpenMode().equals("initialize")) {
-            dbManager=new DataAccess(c.getDataBaseOpenMode().equals("initialize"));
-            dbManager.initializeDB();
-        } else
-            dbManager=new DataAccess();
-        dbManager.close();
+	public BLFacadeImplementation() {
 
+		System.out.println("Creating BLFacadeImplementation instance");
+		ConfigXML c = ConfigXML.getInstance();
 
-    }
+		if (c.getDataBaseOpenMode().equals(init)) {
+			dbManager = new DataAccess(c.getDataBaseOpenMode().equals(init));
+			dbManager.initializeDB();
+		} else
+			dbManager = new DataAccess();
+		dbManager.close();
 
-    public BLFacadeImplementation(DataAccess da)  {
+	}
 
-        System.out.println("Creating BLFacadeImplementation instance with DataAccess parameter");
-        ConfigXML c=ConfigXML.getInstance();
+	public BLFacadeImplementation(DataAccess da) {
 
-        if (c.getDataBaseOpenMode().equals("initialize")) {
-            da.open(true);
-            da.initializeDB();
-            da.close();
+		System.out.println("Creating BLFacadeImplementation instance with DataAccess parameter");
+		ConfigXML c = ConfigXML.getInstance();
 
-        }
-        dbManager=da;		
-    }
-    //Metodo para guardarCambios
-    @WebMethod
-    public User guardarCambios(String name, String surnames, Date birthdate, String dni, char[] passwd, byte[] img) throws NoSuchAlgorithmException {
-    	User user = null;
-        String hashedPass = null;
+		if (c.getDataBaseOpenMode().equals(init)) {
+			da.open(true);
+			da.initializeDB();
+			da.close();
 
-        if(passwd.length != 0) {
-            try{
-                hashedPass = hashPass(String.valueOf(passwd));
-                passwd = null;
-            }catch(NoSuchAlgorithmException e){
-                throw e;
-            }
-        }else hashedPass = this.getCurrentUser().getPasswd();
+		}
+		dbManager = da;
+	}
 
-        dbManager.open(false);
-    	try {
-    		user = dbManager.guardarCambios(name,surnames, birthdate, dni, hashedPass, img);
-    	} catch (Exception e) {
-    		throw e;
-    	} finally {
-    		dbManager.close();
-    	}
-    	return user;
-    }
+	// Metodo para guardarCambios
+	@WebMethod
+	public User guardarCambios(String name, String surnames, Date birthdate, String dni, char[] passwd, byte[] img)
+			throws NoSuchAlgorithmException {
+		User user = null;
+		String hashedPass = null;
 
-    public User getCurrentUser() {
-        return currentUsr;
-    }
+		if (passwd.length != 0) {
+			try {
+				hashedPass = hashPass(String.valueOf(passwd));
+				passwd = null;
+			} catch (NoSuchAlgorithmException e) {
+				throw e;
+			}
+		} else
+			hashedPass = this.getCurrentUser().getPasswd();
 
-    public void setCurrentUser(User usr) {
-        this.currentUsr = usr;
-    }
+		dbManager.open(false);
+		try {
+			user = dbManager.guardarCambios(name, surnames, birthdate, dni, hashedPass, img);
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			dbManager.close();
+		}
+		return user;
+	}
 
-    /**
-     * This method creates a question for an event, with a question text and the minimum bet
-     * 
-     * @param event to which question is added
-     * @param question text of the question
-     * @param betMinimum minimum quantity of the bet
-     * @return the created question, or null, or an exception
-     * @throws EventFinished if current data is after data of the event
-     * @throws QuestionAlreadyExist if the same question already exists for the event
-     */
-    @WebMethod
-    public Question createQuestion(Event event, String question, float betMinimum) throws EventFinished, QuestionAlreadyExist {
-        //The minimum bed must be greater than 0
-        Question qry=null;
+	public User getCurrentUser() {
+		return currentUsr;
+	}
 
-        if(new Date().compareTo(event.getEventDate())>0 || event.isClosed())
-            throw new EventFinished(ResourceBundle.getBundle("Etiquetas").getString("ErrorEventHasFinished"));
+	public void setCurrentUser(User usr) {
+		this.currentUsr = usr;
+	}
 
-        dbManager.open(false);
+	/**
+	 * This method creates a question for an event, with a question text and the
+	 * minimum bet
+	 * 
+	 * @param event      to which question is added
+	 * @param question   text of the question
+	 * @param betMinimum minimum quantity of the bet
+	 * @return the created question, or null, or an exception
+	 * @throws EventFinished        if current data is after data of the event
+	 * @throws QuestionAlreadyExist if the same question already exists for the
+	 *                              event
+	 */
+	@WebMethod
+	public Question createQuestion(Event event, String question, float betMinimum)
+			throws EventFinished, QuestionAlreadyExist {
+		// The minimum bed must be greater than 0
+		Question qry = null;
 
-        try{
-            qry=dbManager.createQuestion(event,question,betMinimum);		
-        }catch(QuestionAlreadyExist e){
-            throw e;
-        }finally{
-            dbManager.close();
-        }
+		if (new Date().compareTo(event.getEventDate()) > 0 || event.isClosed())
+			throw new EventFinished(ResourceBundle.getBundle("Etiquetas").getString("ErrorEventHasFinished"));
 
-        return qry;
-    };
+		dbManager.open(false);
 
-    @WebMethod
-    public User createUser(String name, String surnames, String dni, Date birthdate, char[] passwd, boolean isAdmin) throws ObjectAlreadyExistException, NoSuchAlgorithmException {
-        User usr = null;
-        String pass = String.valueOf(passwd);
+		try {
+			qry = dbManager.createQuestion(event, question, betMinimum);
+		} catch (QuestionAlreadyExist e) {
+			throw e;
+		} finally {
+			dbManager.close();
+		}
 
-        String hash = hashPass(pass);
-        System.out.println("hashed passwd: " + hash);
-        pass = null;
-        passwd = null;
+		return qry;
+	};
 
-        dbManager.open(false);
+	@WebMethod
+	public User createUser(String name, String surnames, String dni, Date birthdate, char[] passwd, boolean isAdmin)
+			throws ObjectAlreadyExistException, NoSuchAlgorithmException {
+		User usr = null;
+		String pass = String.valueOf(passwd);
 
-        try {
-            usr = dbManager.createUser(name, surnames, dni, birthdate, hash, isAdmin);
-        } catch (ObjectAlreadyExistException e) {
-            throw e;
-        }finally{
-            dbManager.close();
-        }
+		String hash = hashPass(pass);
+		System.out.println("hashed passwd: " + hash);
+		pass = null;
+		passwd = null;
 
-        return usr;
-    }
+		dbManager.open(false);
 
-    @WebMethod
-    public Event createEvent(String description, Date eventDate) throws EventFinished, ObjectAlreadyExistException {
-        Event evnt = null;
+		try {
+			usr = dbManager.createUser(name, surnames, dni, birthdate, hash, isAdmin);
+		} catch (ObjectAlreadyExistException e) {
+			throw e;
+		} finally {
+			dbManager.close();
+		}
 
-        if(new Date().compareTo(eventDate) > 0)
-            throw new EventFinished(ResourceBundle.getBundle("Etiquetas").getString("ErrorEventHasFinished"));
+		return usr;
+	}
 
-        dbManager.open(false);
-        try {
-            evnt = dbManager.createEvent(description, eventDate);
-        }catch(ObjectAlreadyExistException e){
-            throw e;
-        }finally{
-            dbManager.close();
-        }
-        return evnt;
-    }
+	@WebMethod
+	public Event createEvent(String description, Date eventDate) throws EventFinished, ObjectAlreadyExistException {
+		Event evnt = null;
 
-    @WebMethod 
-    public Forecast createForecast(String description, float winrate, Question question) throws ObjectAlreadyExistException {
-        Forecast fr = null;
+		if (new Date().compareTo(eventDate) > 0)
+			throw new EventFinished(ResourceBundle.getBundle("Etiquetas").getString("ErrorEventHasFinished"));
 
-        dbManager.open(false);
-        try {
-            fr = dbManager.createForecast(description, winrate, question);
-        } catch (ObjectAlreadyExistException e) {
-            throw e;
-        }finally{
-            dbManager.close();
-        }
-        return fr;
-    }
-    //Crear metodo que abre la base de datos dbOPen 
+		dbManager.open(false);
+		try {
+			evnt = dbManager.createEvent(description, eventDate);
+		} catch (ObjectAlreadyExistException e) {
+			throw e;
+		} finally {
+			dbManager.close();
+		}
+		return evnt;
+	}
 
-    @WebMethod
-    public float createBet(float bet, Forecast fr) throws NotEnoughMoneyException {
-        float wallet;
-        User usr = this.getCurrentUser();
+	@WebMethod
+	public Forecast createForecast(String description, float winrate, Question question)
+			throws ObjectAlreadyExistException {
+		Forecast fr = null;
 
-        dbManager.open(false);
-        try{
-            wallet = dbManager.createBet(bet, usr, fr);
-        }catch(NotEnoughMoneyException e){
-            throw e;
-        }finally{
-            dbManager.close();
-        }
-        return wallet;
-    }
+		dbManager.open(false);
+		try {
+			fr = dbManager.createForecast(description, winrate, question);
+		} catch (ObjectAlreadyExistException e) {
+			throw e;
+		} finally {
+			dbManager.close();
+		}
+		return fr;
+	}
+	// Crear metodo que abre la base de datos dbOPen
 
-    /**
-     * This method invokes the data access to retrieve the events of a given date 
-     * 
-     * @param date in which events are retrieved
-     * @return collection of events
-     */
-    @WebMethod	
-    public Vector<Event> getEvents(Date date) {
-        dbManager.open(false);
-        Vector<Event>  events=dbManager.getEvents(date);
-        dbManager.close();
-        return events;
-    }
+	@WebMethod
+	public float createBet(float bet, Forecast fr) throws NotEnoughMoneyException {
+		float wallet;
+		User usr = this.getCurrentUser();
 
-    @WebMethod 
-    public User getUser(String dni) throws UserNotFound {
-        dbManager.open(false);
-        User usr = null;
-        try{
-            usr = dbManager.getUser(dni);
-        }catch(UserNotFound e){
-            throw e;
-        }finally{
-            dbManager.close();
-        }
-        return usr;
-    }
+		dbManager.open(false);
+		try {
+			wallet = dbManager.createBet(bet, usr, fr);
+		} catch (NotEnoughMoneyException e) {
+			throw e;
+		} finally {
+			dbManager.close();
+		}
+		return wallet;
+	}
 
-    @WebMethod
-    public float addMoney(float money){
-        User usr = this.getCurrentUser();
-        dbManager.open(false);
-        float new_wallet = dbManager.addMoney(usr, money);
-        dbManager.close();
-        return new_wallet;
-    }
+	/**
+	 * This method invokes the data access to retrieve the events of a given date
+	 * 
+	 * @param date in which events are retrieved
+	 * @return collection of events
+	 */
+	@WebMethod
+	public Vector<Event> getEvents(Date date) {
+		dbManager.open(false);
+		Vector<Event> events = dbManager.getEvents(date);
+		dbManager.close();
+		return events;
+	}
 
-    @WebMethod
-    public Card addCard(long cardNum, int cvv) throws ObjectAlreadyExistException, NoSuchAlgorithmException {
-        User usr = this.getCurrentUser();
-        Card card = null;
+	@WebMethod
+	public User getUser(String dni) throws UserNotFound {
+		dbManager.open(false);
+		User usr = null;
+		try {
+			usr = dbManager.getUser(dni);
+		} catch (UserNotFound e) {
+			throw e;
+		} finally {
+			dbManager.close();
+		}
+		return usr;
+	}
 
-        String num = String.valueOf(cardNum);
-        String last3Digits = num.substring(num.length() - 3, num.length() - 0);
-        String hashedNum = hashPass(num);
-        num = null;
-        System.out.println("hash: " + hashedNum);
+	@WebMethod
+	public float addMoney(float money) {
+		User usr = this.getCurrentUser();
+		dbManager.open(false);
+		float new_wallet = dbManager.addMoney(usr, money);
+		dbManager.close();
+		return new_wallet;
+	}
 
-        dbManager.open(false);
-        try{
-            card = dbManager.addCard(usr, hashedNum, cvv, last3Digits);
-        }catch(ObjectAlreadyExistException e){
-            throw e;
-        }finally{
-            dbManager.close();
-        }
+	@WebMethod
+	public Card addCard(long cardNum, int cvv) throws ObjectAlreadyExistException, NoSuchAlgorithmException {
+		User usr = this.getCurrentUser();
+		Card card = null;
 
-        return card;
-    }
+		String num = String.valueOf(cardNum);
+		String last3Digits = num.substring(num.length() - 3, num.length() - 0);
+		String hashedNum = hashPass(num);
+		num = null;
+		System.out.println("hash: " + hashedNum);
 
-    @WebMethod
-    public Vector<Forecast> getQuestionForecasts(Question question){
-        dbManager.open(false);
-        Vector<Forecast> forecasts = dbManager.getQuestionForecasts(question);
-        dbManager.close();
-        return forecasts;
-    }
-    /**
-     * This method invokes the data access to retrieve the dates a month for which there are events
-     * 
-     * @param date of the month for which days with events want to be retrieved 
-     * @return collection of dates
-     */
-    @WebMethod public Vector<Date> getEventsMonth(Date date) {
-    dbManager.open(false);
-    Vector<Date>  dates=dbManager.getEventsMonth(date);
-    dbManager.close();
-    return dates;
-    }
+		dbManager.open(false);
+		try {
+			card = dbManager.addCard(usr, hashedNum, cvv, last3Digits);
+		} catch (ObjectAlreadyExistException e) {
+			throw e;
+		} finally {
+			dbManager.close();
+		}
 
-    public void close() {
-        DataAccess dB4oManager=new DataAccess(false);
+		return card;
+	}
 
-        dB4oManager.close();
+	@WebMethod
+	public Vector<Forecast> getQuestionForecasts(Question question) {
+		dbManager.open(false);
+		Vector<Forecast> forecasts = dbManager.getQuestionForecasts(question);
+		dbManager.close();
+		return forecasts;
+	}
 
-    }
+	/**
+	 * This method invokes the data access to retrieve the dates a month for which
+	 * there are events
+	 * 
+	 * @param date of the month for which days with events want to be retrieved
+	 * @return collection of dates
+	 */
+	@WebMethod
+	public Vector<Date> getEventsMonth(Date date) {
+		dbManager.open(false);
+		Vector<Date> dates = dbManager.getEventsMonth(date);
+		dbManager.close();
+		return dates;
+	}
 
-    /**
-     * This method invokes the data access to initialize the database with some events and questions.
-     * It is invoked only when the option "initialize" is declared in the tag dataBaseOpenMode of resources/config.xml file
-     */	
-    @WebMethod	
-    public void initializeBD(){
-        dbManager.open(false);
-        dbManager.initializeDB();
-        dbManager.close();
-    }
+	public void close() {
+		DataAccess dB4oManager = new DataAccess(false);
 
-    @WebMethod
-    public void setResult(Question question, Forecast fr){
-    	dbManager.open(false);
-        dbManager.setResult(question, fr);
-        dbManager.close();
-    }
+		dB4oManager.close();
 
-    @WebMethod
-    public void closeEvent(Event ev){
-        dbManager.open(false);
-        dbManager.closeEvent(ev);
-        dbManager.close();
-    }
+	}
 
-    private String hashPass(String pass) throws NoSuchAlgorithmException {
-        String hash = null;
-        try{
-            MessageDigest md = MessageDigest.getInstance("SHA-256");
-            hash = new String(md.digest(pass.getBytes()));
-        }catch(NoSuchAlgorithmException e) {
-            throw e;
-        }
-        return hash;
-    }
+	/**
+	 * This method invokes the data access to initialize the database with some
+	 * events and questions. It is invoked only when the option "initialize" is
+	 * declared in the tag dataBaseOpenMode of resources/config.xml file
+	 */
+	@WebMethod
+	public void initializeBD() {
+		dbManager.open(false);
+		dbManager.initializeDB();
+		dbManager.close();
+	}
 
-    @WebMethod
+	@WebMethod
+	public void setResult(Question question, Forecast fr) {
+		dbManager.open(false);
+		dbManager.setResult(question, fr);
+		dbManager.close();
+	}
+
+	@WebMethod
+	public void closeEvent(Event ev) {
+		dbManager.open(false);
+		dbManager.closeEvent(ev);
+		dbManager.close();
+	}
+
+	private String hashPass(String pass) throws NoSuchAlgorithmException {
+		String hash = null;
+		try {
+			MessageDigest md = MessageDigest.getInstance("SHA-256");
+			hash = new String(md.digest(pass.getBytes()));
+		} catch (NoSuchAlgorithmException e) {
+			throw e;
+		}
+		return hash;
+	}
+
+	@WebMethod
 	public boolean isHash(char[] passwd, String hash) {
-        String pass = String.valueOf(passwd);
-        try{
-            return hashPass(pass).equals(hash);
-        }catch(NoSuchAlgorithmException e){
-            return false;
-        }
+		String pass = String.valueOf(passwd);
+		try {
+			return hashPass(pass).equals(hash);
+		} catch (NoSuchAlgorithmException e) {
+			return false;
+		}
 	}
 }
-

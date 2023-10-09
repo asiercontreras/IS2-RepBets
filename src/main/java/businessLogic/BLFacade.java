@@ -3,8 +3,6 @@ package businessLogic;
 import java.util.Vector;
 import java.security.NoSuchAlgorithmException;
 import java.util.Date;
-
-//import domain.Booking;
 import domain.*;
 import exceptions.*;
 

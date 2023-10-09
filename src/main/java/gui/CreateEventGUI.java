@@ -34,7 +34,7 @@ public class CreateEventGUI extends JFrame {
 		}
 	}
 
-	private void jbInit() throws Exception {
+	private void jbInit() {
 		setResizable(false);
 		this.setSize(new Dimension(700, 500));
 		getContentPane().setLayout(null);
