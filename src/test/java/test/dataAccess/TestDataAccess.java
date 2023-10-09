@@ -147,5 +147,16 @@ public class TestDataAccess {
 			} else
 			return false;
 		}
+		public boolean removeForecast(Forecast f) {
+			System.out.println(">> DataAccessTest: removeForecast");
+			Forecast e = db.find(Forecast.class, f.getFrNum());
+			if (e!=null) {
+				db.getTransaction().begin();
+				db.remove(e);
+				db.getTransaction().commit();
+				return true;
+			} else 
+			return false;
+	    }
 }
 
