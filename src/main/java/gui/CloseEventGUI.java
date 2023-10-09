@@ -56,7 +56,7 @@ public class CloseEventGUI extends JFrame {
 		try {
 			jbInit();
 		} catch (Exception e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
 	}
 

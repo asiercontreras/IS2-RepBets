@@ -30,7 +30,7 @@ public class CreateEventGUI extends JFrame {
 		try {
 			jbInit();
 		} catch (Exception e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
 	}
 

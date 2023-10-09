@@ -117,7 +117,7 @@ public class LoginGUI extends JFrame {
 			getContentPane().add(getPanel());
 			jbInit();
 		} catch (Exception e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
 	}
 

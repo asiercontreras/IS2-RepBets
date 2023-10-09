@@ -48,7 +48,7 @@ public class CreateQuestionGUI extends JFrame {
 		try {
 			jbInit(v);
 		} catch (Exception e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
 	}
 
@@ -302,7 +302,7 @@ public static void paintDaysWithEvents(JCalendar jCalendar,Vector<Date> datesWit
 			jLabelError.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorNumber"));
 		} catch (Exception e1) {
 
-			e1.printStackTrace();
+			//e1.printStackTrace();
 
 		}
 	}

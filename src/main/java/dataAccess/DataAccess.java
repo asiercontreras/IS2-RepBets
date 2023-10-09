@@ -159,7 +159,7 @@ public class DataAccess  {
             System.out.println("Db initialized");
         }
         catch (Exception e){
-            e.printStackTrace();
+            //e.printStackTrace();
         }
     }
 
