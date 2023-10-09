@@ -22,8 +22,6 @@ import org.junit.Test;
 public class CreateBetDAWTest {
 
 	static DataAccess sut;
-
-	// additional operations needed to execute the test
 	static TestDataAccess testDA;
 	private Event ev;
 	int frNum;
@@ -33,36 +31,33 @@ public class CreateBetDAWTest {
 	int month;
 	int year;
 	Event ev11;
-	
+
 	@Before
 	public void initialize() throws ObjectAlreadyExistException {
+		frNum = 1111;
+		description = "Atleti";
+		winrate = 1.2f;
+		Question q11;
+		Calendar today = Calendar.getInstance();
 
-		sut = new DataAccess();
-		// additional operations needed to execute the test
-		testDA = new TestDataAccess();
-		// Configura el escenario de prueba con un usuario y una previsión que tenga
-				// suficiente dinero en la billetera, pero ya habia una apuesta previa.
-				 frNum = 1111;
-				 description = "Atleti";
-				 winrate = 1.2f;
-				Question q11;
-				Calendar today = Calendar.getInstance();
+		month = today.get(Calendar.MONTH);
+		month += 1;
+		year = today.get(Calendar.YEAR);
+		if (month == 12) {
+			month = 0;
+			year += 1;
+		}
 
-				 month = today.get(Calendar.MONTH);
-				month += 1;
-				 year = today.get(Calendar.YEAR);
-				if (month == 12) {
-					month = 0;
-					year += 1;
-				}
-				 ev11 = sut.createEvent("Gana Atleti", UtilDate.newDate(year, month, 17));
-				q11 = ev11.addQuestion("¿Quién ganará el partido?", 1f);
-				
 	}
 
 	@Test
 	public void testCreateBetWithSufficientFunds() throws NotEnoughMoneyException, ObjectAlreadyExistException {
-		
+		sut = new DataAccess();
+		// additional operations needed to execute the test
+		testDA = new TestDataAccess();
+		// Configura el escenario de prueba con un usuario y una previsión que tenga
+		ev11 = sut.createEvent("Gana Atleti", UtilDate.newDate(year, month, 17));
+		q11 = ev11.addQuestion("¿Quién ganará el partido?", 1f);
 		float expectedWalletValue = 190.0f;
 		User user1 = sut.createUser("asier", "contreras", "24", new Date(2000, 5, 1), "11", false);
 		user1.setWallet(200f);
@@ -87,7 +82,12 @@ public class CreateBetDAWTest {
 
 	@Test // (expected = NotEnoughMoneyException.class)
 	public void testCreateBetWithInsufficientFunds() throws NotEnoughMoneyException, ObjectAlreadyExistException {
-	
+		sut = new DataAccess();
+		// additional operations needed to execute the test
+		testDA = new TestDataAccess();
+		// Configura el escenario de prueba con un usuario y una previsión que tenga
+		ev11 = sut.createEvent("Gana Atleti", UtilDate.newDate(year, month, 17));
+		q11 = ev11.addQuestion("¿Quién ganará el partido?", 1f);
 		float expectedWalletValue = 190.0f;
 		User user1 = sut.createUser("asier", "contreras", "24", new Date(2000, 5, 1), "11", false);
 		user1.setWallet(5.0f);
@@ -110,10 +110,17 @@ public class CreateBetDAWTest {
 		}
 
 	}
-	
+
 	@Test
 	public void testCreateSecondBetWithSufficientFunds() throws NotEnoughMoneyException, ObjectAlreadyExistException {
-		float expectedWalletValue =190.0f;
+
+		sut = new DataAccess();
+		// additional operations needed to execute the test
+		testDA = new TestDataAccess();
+		// Configura el escenario de prueba con un usuario y una previsión que tenga
+		ev11 = sut.createEvent("Gana Atleti", UtilDate.newDate(year, month, 17));
+		q11 = ev11.addQuestion("¿Quién ganará el partido?", 1f);
+		float expectedWalletValue = 190.0f;
 		User user1 = sut.createUser("asier", "contreras", "24", new Date(2000, 5, 1), "11", false);
 		user1.setWallet(200f);
 		Forecast forecast1 = sut.createForecast(description, winrate, q11);
@@ -134,6 +141,5 @@ public class CreateBetDAWTest {
 			System.out.println("Finally " + b);
 		}
 	}
-
 
 }
