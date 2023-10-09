@@ -122,16 +122,7 @@ public class Forecast implements Serializable {
 				&& Objects.equals(question, other.question)
 				&& Float.floatToIntBits(winrate) == Float.floatToIntBits(other.winrate);
 	}
-    
 
-   /* public boolean equals(Object o){
-        if(o == this) return true;
-        if(o == null) return false;
-        if(o.getClass() != this.getClass()) return false;
-
-        Forecast f = (Forecast) o;
-        if(this.getDescription().equals(f.getDescription()) && this.getQuestion().equals(f.getQuestion())) return true;
-        return false;
-    }*/
+	
 }
 

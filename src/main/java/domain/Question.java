@@ -202,15 +202,5 @@ public class Question implements Serializable {
 				&& Objects.equals(question, other.question) && Objects.equals(questionNumber, other.questionNumber)
 				&& Objects.equals(result, other.result);
 	}
-	
-	
-  /*  public boolean equals(Object o){
-        if(o == null) return false;
-        if(getClass() != o.getClass()) return false;
-        if(this == o) return true;
 
-        Question q = (Question) o;
-        if(q.getQuestionNumber().equals(this.getQuestionNumber())) return true;
-        return false;
-    }*/
 }

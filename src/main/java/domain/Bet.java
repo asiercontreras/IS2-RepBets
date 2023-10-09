@@ -74,16 +74,7 @@ public class Bet {
 		return Float.floatToIntBits(bet) == Float.floatToIntBits(other.bet) && Objects.equals(fr, other.fr)
 				&& Objects.equals(id, other.id) && Objects.equals(usr, other.usr);
 	}
-	/*
-	public boolean equals(Object o){
-        if(o == this) return true;
-        if(o == null) return false;
-        if(o.getClass() != this.getClass()) return false;
 
-        Bet f = (Bet) o;
-        if(this.fr.equals(f.getFr())) return true;
-        return false;
-    }*/
     
 }
 
