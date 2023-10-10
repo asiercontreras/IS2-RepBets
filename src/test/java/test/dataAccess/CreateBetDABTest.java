@@ -66,7 +66,7 @@ public class CreateBetDABTest {
 		try {
 			float newValue = sut.createBet(10.0f, user1, forecast1);
 			// Verifica que el nuevo valor de la billetera sea el esperado.
-			assertEquals(expectedWalletValue, newValue, 0.01); // Ajusta el valor esperado según tu lógica.
+			assertEquals(expectedWalletValue, newValue, 0.01); 
 		} catch (NotEnoughMoneyException e) {
 			fail("El método createBet debería permitir una apuesta válida con suficiente dinero.");
 		} finally {
@@ -97,7 +97,7 @@ public class CreateBetDABTest {
 		try {
 			float newValue = sut.createBet(10.0f, user1, forecast1);
 			// Verifica que el nuevo valor de la billetera sea el esperado.
-			assertEquals(expectedWalletValue, newValue, 0.01); // Ajusta el valor esperado según tu lógica.
+			assertEquals(expectedWalletValue, newValue, 0.01); 
 		} catch (NotEnoughMoneyException e) {
 			fail("El método createBet debería permitir una apuesta válida con suficiente dinero.");
 		} finally {
@@ -130,7 +130,7 @@ public class CreateBetDABTest {
 			float newValue = sut.createBet(5.0f, user1, forecast1);
 			float newValue2 = sut.createBet(10.0f, user1, forecast1);
 			// Verifica que el nuevo valor de la billetera sea el esperado.
-			assertEquals(expectedWalletValue, newValue2, 0.01); // Ajusta el valor esperado según tu lógica.
+			assertEquals(expectedWalletValue, newValue2, 0.01); 
 		} catch (NotEnoughMoneyException e) {
 			fail("El método createBet debería permitir una apuesta válida con suficiente dinero.");
 		} finally {
@@ -164,7 +164,7 @@ public class CreateBetDABTest {
 			// Llama al método createBet y verifica si funciona correctamente.
 			float newValue = sut.createBet(5.0f, user1, forecast1);
 			// Verifica que el nuevo valor de la billetera sea el esperado.
-			assertEquals(expectedWalletValue, newValue, 0.01); // Ajusta el valor esperado según tu lógica.
+			assertEquals(expectedWalletValue, newValue, 0.01); 
 		} catch (NotEnoughMoneyException e) {
 			System.out.println("Error");
 			fail("El método createBet debería permitir una apuesta válida con suficiente dinero.");
