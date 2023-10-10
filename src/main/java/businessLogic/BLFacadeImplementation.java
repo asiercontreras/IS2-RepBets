@@ -182,9 +182,9 @@ public class BLFacadeImplementation implements BLFacade {
 	// Crear metodo que abre la base de datos dbOPen
 
 	@WebMethod
-	public float createBet(float bet, Forecast fr) throws NotEnoughMoneyException {
+	public float createBet(float bet, User usr, Forecast fr) throws NotEnoughMoneyException {
 		float wallet;
-		User usr = this.getCurrentUser();
+		//User usr = this.getCurrentUser();
 
 		dbManager.open(false);
 		try {

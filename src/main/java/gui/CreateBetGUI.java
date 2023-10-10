@@ -59,7 +59,7 @@ public class CreateBetGUI extends JFrame {
 		try {
 			jbInit();
 		} catch (Exception e) {
-			//e.printStackTrace();
+			// e.printStackTrace();
 		}
 	}
 
@@ -320,7 +320,7 @@ public class CreateBetGUI extends JFrame {
 							return;
 						}
 
-						usr.setWallet(facade.createBet(bet, fr));
+						usr.setWallet(facade.createBet(bet, usr, fr));
 						usr.addBet(new Bet(bet, usr, fr));
 						lblError.setForeground(new Color(0, 0, 0));
 						lblError.setText(ResourceBundle.getBundle("Etiquetas").getString("BetUpdated"));

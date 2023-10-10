@@ -63,7 +63,7 @@ public interface BLFacade  {
     public Vector<Forecast> getQuestionForecasts(Question question);
 
     @WebMethod
-    public float createBet(float bet, Forecast fr) throws NotEnoughMoneyException;
+    public float createBet(float bet,User usr, Forecast fr) throws NotEnoughMoneyException;
 
     @WebMethod
     public User getCurrentUser();
