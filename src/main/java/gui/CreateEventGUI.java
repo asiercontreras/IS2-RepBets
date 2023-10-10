@@ -16,21 +16,48 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.io.File;
 import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.Vector;
+import java.util.logging.*;
 
 public class CreateEventGUI extends JFrame {
 	private JTextField txtEventDescription;
 	private JButton btnCreateEvent;
 	private JCalendar jCalendar;
 	private Vector<Date> datesWithEventsCurrentMonth = new Vector<>();
+	
+	// Crear logger
+	private Logger logger = Logger.getLogger(this.getClass().getSimpleName());
 
 	public CreateEventGUI() {
+
 		try {
+
+			// Crear el nombre del que va a tener el archivo
+			String nombreArchivo = this.getClass().getSimpleName() + "LOGGER.txt";
+
+			// Crear un fichero para saber si se ha creado o no
+			File archivo = new File(nombreArchivo);
+
+			// Comprobar si ya existe el archivo para no crear otro
+			if (!archivo.exists()) {
+				// Crear el fichero
+				FileHandler fileHandler = new FileHandler(nombreArchivo);
+
+				// El formato que vayamos a querer darle al logger
+				fileHandler.setFormatter(new SimpleFormatter());
+				logger.addHandler(fileHandler);
+			}
+
 			jbInit();
+
+			// El mensaje que queremos poner cuando el programa se ejecute correctamente
+			logger.log(Level.INFO, ">>>>>>> " + this.getClass().getSimpleName() + " ejecutando correctamente\n");
 		} catch (Exception e) {
-			//e.printStackTrace();
+			// El mensaje que queremos poner cuando el programa salte un error
+			logger.log(Level.INFO, ">>>>>>> ERROR al ejecutar en " + this.getClass().getSimpleName()+"\n");
 		}
 	}
 

@@ -11,12 +11,15 @@ import java.awt.*;
 import java.awt.event.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.io.File;
 
 import businessLogic.BLFacade;
 import configuration.UtilDate;
 import domain.Event;
 import exceptions.EventFinished;
 import exceptions.QuestionAlreadyExist;
+
+import java.util.logging.*;
 
 public class CreateQuestionGUI extends JFrame {
 	private static final long serialVersionUID = 1L;
@@ -41,14 +44,39 @@ public class CreateQuestionGUI extends JFrame {
 	private JButton jButtonClose = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Close"));
 	private JLabel jLabelMsg = new JLabel();
 	private JLabel jLabelError = new JLabel();
-	
+
 	private Vector<Date> datesWithEventsCurrentMonth = new Vector<Date>();
 
+	// Crear logger
+	private Logger logger = Logger.getLogger(this.getClass().getSimpleName());
+
 	public CreateQuestionGUI(Vector<domain.Event> v) {
+
 		try {
+
+			// Crear el nombre del que va a tener el archivo
+			String nombreArchivo = this.getClass().getSimpleName() + "LOGGER.txt";
+
+			// Crear un fichero para saber si se ha creado o no
+			File archivo = new File(nombreArchivo);
+
+			// Comprobar si ya existe el archivo para no crear otro
+			if (!archivo.exists()) {
+				// Crear el fichero
+				FileHandler fileHandler = new FileHandler(nombreArchivo);
+
+				// El formato que vayamos a querer darle al logger
+				fileHandler.setFormatter(new SimpleFormatter());
+				logger.addHandler(fileHandler);
+			}
+
 			jbInit(v);
+
+			// El mensaje que queremos poner cuando el programa se ejecute correctamente
+			logger.log(Level.INFO, ">>>>>>> " + this.getClass().getSimpleName() + " ejecutando correctamente\n");
 		} catch (Exception e) {
-			//e.printStackTrace();
+			// El mensaje que queremos poner cuando el programa salte un error
+			logger.log(Level.INFO, ">>>>>>> ERRRO al ejecutar en " + this.getClass().getSimpleName()+"\n");
 		}
 	}
 
@@ -133,19 +161,15 @@ public class CreateQuestionGUI extends JFrame {
 		this.getContentPane().add(jComboBoxEvents, null);
 
 		this.getContentPane().add(jCalendar, null);
-		
-		
+
 		BLFacade facade = ApplicationLauncher.getBusinessLogic();
-		datesWithEventsCurrentMonth=facade.getEventsMonth(jCalendar.getDate());
-		paintDaysWithEvents(jCalendar,datesWithEventsCurrentMonth);
-		
-		
+		datesWithEventsCurrentMonth = facade.getEventsMonth(jCalendar.getDate());
+		paintDaysWithEvents(jCalendar, datesWithEventsCurrentMonth);
 
 		jLabelEventDate.setBounds(new Rectangle(40, 15, 140, 25));
 		jLabelEventDate.setBounds(40, 16, 140, 25);
 		getContentPane().add(jLabelEventDate);
 
-		
 		// Code for JCalendar
 		this.jCalendar.addPropertyChangeListener(new PropertyChangeListener() {
 			public void propertyChange(PropertyChangeEvent propertychangeevent) {
@@ -156,32 +180,32 @@ public class CreateQuestionGUI extends JFrame {
 				} else if (propertychangeevent.getPropertyName().equals("calendar")) {
 					calendarAnt = (Calendar) propertychangeevent.getOldValue();
 					calendarAct = (Calendar) propertychangeevent.getNewValue();
-					System.out.println("calendarAnt: "+calendarAnt.getTime());
-					System.out.println("calendarAct: "+calendarAct.getTime());
+					System.out.println("calendarAnt: " + calendarAnt.getTime());
+					System.out.println("calendarAct: " + calendarAct.getTime());
 					DateFormat dateformat1 = DateFormat.getDateInstance(1, jCalendar.getLocale());
-					
+
 					int monthAnt = calendarAnt.get(Calendar.MONTH);
 					int monthAct = calendarAct.get(Calendar.MONTH);
-					if (monthAct!=monthAnt) {
-						if (monthAct==monthAnt+2) { 
-							// Si en JCalendar está 30 de enero y se avanza al mes siguiente, devolverá 2 de marzo (se toma como equivalente a 30 de febrero)
+					if (monthAct != monthAnt) {
+						if (monthAct == monthAnt + 2) {
+							// Si en JCalendar está 30 de enero y se avanza al mes siguiente, devolverá 2 de
+							// marzo (se toma como equivalente a 30 de febrero)
 							// Con este código se dejará como 1 de febrero en el JCalendar
-							calendarAct.set(Calendar.MONTH, monthAnt+1);
+							calendarAct.set(Calendar.MONTH, monthAnt + 1);
 							calendarAct.set(Calendar.DAY_OF_MONTH, 1);
 						}
-						
+
 						jCalendar.setCalendar(calendarAct);
-						
+
 						BLFacade facade = ApplicationLauncher.getBusinessLogic();
 
-						datesWithEventsCurrentMonth=facade.getEventsMonth(jCalendar.getDate());
+						datesWithEventsCurrentMonth = facade.getEventsMonth(jCalendar.getDate());
 					}
 
+					paintDaysWithEvents(jCalendar, datesWithEventsCurrentMonth);
 
-
-					paintDaysWithEvents(jCalendar,datesWithEventsCurrentMonth);
-
-					//	Date firstDay = UtilDate.trim(new Date(jCalendar.getCalendar().getTime().getTime()));
+					// Date firstDay = UtilDate.trim(new
+					// Date(jCalendar.getCalendar().getTime().getTime()));
 					Date firstDay = UtilDate.trim(calendarAct.getTime());
 
 					try {
@@ -217,17 +241,16 @@ public class CreateQuestionGUI extends JFrame {
 		});
 	}
 
-	
-public static void paintDaysWithEvents(JCalendar jCalendar,Vector<Date> datesWithEventsCurrentMonth) {
-		// For each day with events in current month, the background color for that day is changed to cyan.
+	public static void paintDaysWithEvents(JCalendar jCalendar, Vector<Date> datesWithEventsCurrentMonth) {
+		// For each day with events in current month, the background color for that day
+		// is changed to cyan.
 
-		
 		Calendar calendar = jCalendar.getCalendar();
-		
+
 		int month = calendar.get(Calendar.MONTH);
-		int today=calendar.get(Calendar.DAY_OF_MONTH);
-		int year=calendar.get(Calendar.YEAR);
-		
+		int today = calendar.get(Calendar.DAY_OF_MONTH);
+		int year = calendar.get(Calendar.YEAR);
+
 		calendar.set(Calendar.DAY_OF_MONTH, 1);
 		int offset = calendar.get(Calendar.DAY_OF_WEEK);
 
@@ -235,15 +258,12 @@ public static void paintDaysWithEvents(JCalendar jCalendar,Vector<Date> datesWit
 			offset += 4;
 		else
 			offset += 5;
-		
-		
-	 	for (Date d:datesWithEventsCurrentMonth){
 
-	 		calendar.setTime(d);
-	 		System.out.println(d);
-	 		
+		for (Date d : datesWithEventsCurrentMonth) {
 
-			
+			calendar.setTime(d);
+			System.out.println(d);
+
 			// Obtain the component of the day in the panel of the DayChooser of the
 			// JCalendar.
 			// The component is located after the decorator buttons of "Sun", "Mon",... or
@@ -255,20 +275,36 @@ public static void paintDaysWithEvents(JCalendar jCalendar,Vector<Date> datesWit
 			Component o = (Component) jCalendar.getDayChooser().getDayPanel()
 					.getComponent(calendar.get(Calendar.DAY_OF_MONTH) + offset);
 			o.setBackground(Color.CYAN);
-	 	}
-	 	
- 			calendar.set(Calendar.DAY_OF_MONTH, today);
-	 		calendar.set(Calendar.MONTH, month);
-	 		calendar.set(Calendar.YEAR, year);
+		}
 
-	 	
+		calendar.set(Calendar.DAY_OF_MONTH, today);
+		calendar.set(Calendar.MONTH, month);
+		calendar.set(Calendar.YEAR, year);
+
 	}
-	
-	 
+
 	private void jButtonCreate_actionPerformed(ActionEvent e) {
+
 		domain.Event event = ((domain.Event) jComboBoxEvents.getSelectedItem());
 
 		try {
+
+			//Crear el nombre del que va a tener el archivo
+			String nombreArchivo1 = this.getClass().getSimpleName() + "_BotonCreate_LOGGER.txt";
+			
+			//Crear un fichero para saber si se ha creado o no
+			File archivo1 = new File(nombreArchivo1);
+			
+			//Comprobar si ya existe el archivo para no crear otro
+			if(!archivo1.exists()) {
+				// Crear el fichero
+				FileHandler fileHandler1 = new FileHandler(nombreArchivo1);
+
+				// El formato que vayamos a querer darle al logger
+				fileHandler1.setFormatter(new SimpleFormatter());
+				logger.addHandler(fileHandler1);
+			}
+
 			jLabelError.setText("");
 			jLabelMsg.setText("");
 
@@ -290,6 +326,9 @@ public static void paintDaysWithEvents(JCalendar jCalendar,Vector<Date> datesWit
 					facade.createQuestion(event, inputQuery, inputPrice);
 
 					jLabelMsg.setText(ResourceBundle.getBundle("Etiquetas").getString("QueryCreated"));
+					// El mensaje que queremos poner cuando el programa salte un error
+					logger.log(Level.INFO, ">>>>>>> TODO CORRECTO en el boton de crear la pregunta en "
+							+ this.getClass().getSimpleName() + "\n");
 				}
 			} else
 				jLabelMsg.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorQuery"));
@@ -301,8 +340,9 @@ public static void paintDaysWithEvents(JCalendar jCalendar,Vector<Date> datesWit
 		} catch (java.lang.NumberFormatException e1) {
 			jLabelError.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorNumber"));
 		} catch (Exception e1) {
-
-			//e1.printStackTrace();
+			// El mensaje que queremos poner cuando el programa salte un error
+			logger.log(Level.INFO,
+					">>>>>>> ERRRO en el boton de crear la pregunta en " + this.getClass().getSimpleName()+"\n");
 
 		}
 	}

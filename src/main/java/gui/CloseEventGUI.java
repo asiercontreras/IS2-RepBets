@@ -4,6 +4,9 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import businessLogic.BLFacade;
 import configuration.UtilDate;
+import dataAccess.ObjectdbManagerServer;
+
+import java.util.logging.*;
 
 import com.toedter.calendar.JCalendar;
 
@@ -14,6 +17,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.beans.*;
+import java.io.File;
 import java.text.DateFormat;
 import java.util.*;
 
@@ -52,11 +56,36 @@ public class CloseEventGUI extends JFrame {
 	private JComboBox<Forecast> forecastBox = new JComboBox<>();
 	private final JButton btnCloseWindow = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CloseWindow"));
 
+	// Crear logger
+	private Logger logger = Logger.getLogger(this.getClass().getSimpleName());
+
 	public CloseEventGUI() {
+
 		try {
+
+			// Crear el nombre del que va a tener el archivo
+			String nombreArchivo = this.getClass().getSimpleName() + "LOGGER.txt";
+
+			// Crear un fichero para saber si se ha creado o no
+			File archivo = new File(nombreArchivo);
+
+			// Comprobar si ya existe el archivo para no crear otro
+			if (!archivo.exists()) {
+				// Crear el fichero
+				FileHandler fileHandler = new FileHandler(nombreArchivo);
+
+				// El formato que vayamos a querer darle al logger
+				fileHandler.setFormatter(new SimpleFormatter());
+				logger.addHandler(fileHandler);
+			}
+
 			jbInit();
+
+			// El mensaje que queremos poner cuando el programa se ejecute correctamente
+			logger.log(Level.INFO, ">>>>>>> " + this.getClass().getSimpleName() + " ejecutando correctamente\n");
 		} catch (Exception e) {
-			//e.printStackTrace();
+			// El mensaje que queremos poner cuando el programa salte un error
+			logger.log(Level.INFO, ">>>>>>> ERROR al ejecutar en" + this.getClass().getSimpleName()+"\n");
 		}
 	}
 

@@ -3,6 +3,8 @@ package dataAccess;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 
+import java.util.logging.*;
+
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
@@ -15,6 +17,7 @@ import javax.swing.JTextArea;
 
 
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.awt.event.ActionEvent;
 
 /**
@@ -34,18 +37,40 @@ public class ObjectdbManagerServer extends JDialog {
     //For mac 
     //private String objectDbpath="src//main//resources//objectdb.jar";
 
- 	
-
+    
 
 	public static void main(String[] args) {
+		
+		//Crear logger
+		Logger logger = Logger.getLogger(ObjectdbManagerServer.class.getSimpleName());
+		
 		try {
+        	
+			//Crear el nombre del que va a tener el archivo
+			String nombreArchivo = ObjectdbManagerServer.class.getSimpleName() + "LOGGER.txt";
 			
+			//Crear un fichero para saber si se ha creado o no
+			File archivo = new File(nombreArchivo);
 			
+			//Comprobar si ya existe el archivo para no crear otro
+			if(!archivo.exists()) {
+				// Crear el fichero
+				FileHandler fileHandler = new FileHandler(nombreArchivo);
+
+				// El formato que vayamos a querer darle al logger
+				fileHandler.setFormatter(new SimpleFormatter());
+				logger.addHandler(fileHandler);
+			}
+		    
 			ObjectdbManagerServer dialog = new ObjectdbManagerServer();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			dialog.setVisible(true);
+			
+			//El mensaje que queremos poner cuando el programa se ejecute correctamente
+			logger.log(Level.INFO, ">>>>>>> " + ObjectdbManagerServer.class.getSimpleName() + " ejecutando correctamente\n");
 		} catch (Exception e) {
-			//e.printStackTrace();
+			//El mensaje que queremos poner cuando el programa salte un error
+			logger.log(Level.INFO, ">>>>>>> ERROR al ejecutar en" + ObjectdbManagerServer.class.getSimpleName()+"\n");
 		}
 	}
 

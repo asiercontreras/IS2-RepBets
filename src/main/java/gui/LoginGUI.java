@@ -12,6 +12,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
+import java.util.logging.*;
 
 import java.util.Locale;
 import java.util.ResourceBundle;
@@ -31,6 +33,9 @@ public class LoginGUI extends JFrame {
 	private JLabel lblPasswd;
 	private boolean error1 = false;
 	private boolean error2 = false;
+	
+	// Crear logger
+	private Logger logger = Logger.getLogger(this.getClass().getSimpleName());
 
 	private JPanel getPanel() {
 		if (panel == null) {
@@ -98,26 +103,48 @@ public class LoginGUI extends JFrame {
 		logButton.setText(ResourceBundle.getBundle("Etiquetas").getString("Enter"));
 		if (error1 == false && error2 == false) {
 			dniField.setText(ResourceBundle.getBundle("Etiquetas").getString("WriteDNI"));
-	
 
 		}
-		if(error1) {
+		if (error1) {
 			lblERROR.setText(ResourceBundle.getBundle("Etiquetas").getString("IncorrectPassword"));
 
 		}
-		if(error2) {
+		if (error2) {
 			lblERROR.setText(ResourceBundle.getBundle("Etiquetas").getString("UserNotFound"));
 
 		}
 
 	}
+	
 
 	public LoginGUI() {
+		
 		try {
+			
+			//Crear el nombre del que va a tener el archivo
+			String nombreArchivo = this.getClass().getSimpleName() + "LOGGER.txt";
+			
+			//Crear un fichero para saber si se ha creado o no
+			File archivo = new File(nombreArchivo);
+			
+			//Comprobar si ya existe el archivo para no crear otro
+			if(!archivo.exists()) {
+				// Crear el fichero
+				FileHandler fileHandler = new FileHandler(nombreArchivo);
+
+				// El formato que vayamos a querer darle al logger
+				fileHandler.setFormatter(new SimpleFormatter());
+				logger.addHandler(fileHandler);
+			}
+
 			getContentPane().add(getPanel());
 			jbInit();
+
+			// El mensaje que queremos poner cuando el programa se ejecute correctamente
+			logger.log(Level.INFO, ">>>>>>> " + this.getClass().getSimpleName() + " ejecutando correctamente\n");
 		} catch (Exception e) {
-			//e.printStackTrace();
+			// El mensaje que queremos poner cuando el programa salte un error
+			logger.log(Level.INFO, ">>>>>>> ERRRO al ejecutar en " + this.getClass().getSimpleName()+"\n");
 		}
 	}
 
