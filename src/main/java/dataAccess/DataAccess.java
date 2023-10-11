@@ -59,7 +59,7 @@ public class DataAccess {
 		try {
 
 			// Crear el nombre del que va a tener el archivo
-			String nombreArchivo = this.getClass().getSimpleName() + "LOGGER.txt";
+			String nombreArchivo = this.getClass().getSimpleName() + "LOGGER.log";
 
 			// Crear un fichero para saber si se ha creado o no
 			File archivo = new File(nombreArchivo);
@@ -67,10 +67,10 @@ public class DataAccess {
 			// Comprobar si ya existe el archivo para no crear otro
 			if (!archivo.exists()) {
 				// Crear el fichero
-				FileHandler fileHandler = new FileHandler(nombreArchivo);
+				Handler fileHandler = new FileHandler(nombreArchivo);
 
 				// El formato que vayamos a querer darle al logger
-				fileHandler.setFormatter(new SimpleFormatter());
+				//fileHandler.setFormatter(new SimpleFormatter());
 				logger.addHandler(fileHandler);
 			}
 
