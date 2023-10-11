@@ -26,8 +26,8 @@ import exceptions.*;
  * It implements the data access to the objectDb database
  */
 public class DataAccess {
-	protected static EntityManager db;
-	protected static EntityManagerFactory emf;
+	protected EntityManager db;
+	protected EntityManagerFactory emf;
 
 	ConfigXML c = ConfigXML.getInstance();
 

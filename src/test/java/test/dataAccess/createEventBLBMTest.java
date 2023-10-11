@@ -60,7 +60,7 @@ public class createEventBLBMTest {
 
 	}
 
-	// Test cuando ya hay un evento creado en la BD
+	// Test cuando creas creas un evento y no esta creado
 	@Test
 	public void test1() throws ObjectAlreadyExistException, EventFinished {
 
@@ -78,6 +78,7 @@ public class createEventBLBMTest {
 		}
 	}
 
+	// Test cuando creas un evento pero esta creado
 	@Test
 	public void test2() throws ObjectAlreadyExistException, EventFinished {
 
@@ -90,6 +91,7 @@ public class createEventBLBMTest {
 
 	}
 	
+	// Test cuando creas un evento que ya ha finalizado
 	@Test
 	public void test3() throws ObjectAlreadyExistException, EventFinished {
 
