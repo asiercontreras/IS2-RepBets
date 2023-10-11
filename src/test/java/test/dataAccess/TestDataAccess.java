@@ -2,12 +2,15 @@ package test.dataAccess;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
+import java.util.concurrent.ThreadLocalRandom;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
 
 import configuration.ConfigXML;
 import domain.Event;
@@ -167,6 +170,35 @@ public class TestDataAccess {
 			} else 
 			return false;
 			
-		} 
+		}
+		
+		public Date getRandomDateWithNoEvents() {
+			Date startDate = new Date(120, 0, 1); //1/1/2020
+	        Date endDate = new Date(123, 11, 31); //1/12/2023
+	        /**
+	         * El formato para la clase Date es raro, y además es una clase
+	         * que ya no se debería usar. Pero como el código original usa
+	         * Date, lo tenemos que utilizar también.
+	         */
+	        
+	        long startTime = startDate.getTime();
+	        long endTime = endDate.getTime();
+
+	        while(true) {
+	        //Generamos un tiempo aleatorio entre ambas fechas.
+	        long randomTime = ThreadLocalRandom.current().nextLong(startTime, endTime + 1);
+
+	        // Create a new Date object with the random time
+	        Date randomDate = new Date(randomTime);
+	        
+	        TypedQuery<Event> query = db.createQuery("SELECT ev FROM Event ev WHERE ev.eventDate=?1", Event.class);
+			query.setParameter(1, randomDate);
+			List<Event> events = query.getResultList();
+			//Estoy seguro que esto se podría mejorar, pero es para realizar pruebas, y además es una manera segura de hacerlo
+			if(events.isEmpty()) break;
+			return randomDate;
+	        }
+	        
+		}
 }
 
