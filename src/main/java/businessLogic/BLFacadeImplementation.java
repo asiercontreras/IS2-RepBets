@@ -240,7 +240,6 @@ public class BLFacadeImplementation implements BLFacade {
 		String num = String.valueOf(cardNum);
 		String last3Digits = num.substring(num.length() - 3, num.length() - 0);
 		String hashedNum = hashPass(num);
-		num = null;
 		System.out.println("hash: " + hashedNum);
 
 		dbManager.open(false);
