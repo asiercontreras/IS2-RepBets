@@ -158,5 +158,15 @@ public class TestDataAccess {
 			} else 
 			return false;
 	    }
+		
+		public boolean existEvent(Event ev) {
+			System.out.println(">> DataAccessTest: existQuestion");
+			Event e = db.find(Event.class, ev.getEventNumber());
+			if (e!=null) {
+				return true;
+			} else 
+			return false;
+			
+		} 
 }
 
