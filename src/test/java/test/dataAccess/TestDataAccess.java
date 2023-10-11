@@ -183,22 +183,23 @@ public class TestDataAccess {
 	        
 	        long startTime = startDate.getTime();
 	        long endTime = endDate.getTime();
+	        
+	        Date randomDate;
 
 	        while(true) {
 	        //Generamos un tiempo aleatorio entre ambas fechas.
 	        long randomTime = ThreadLocalRandom.current().nextLong(startTime, endTime + 1);
 
 	        // Create a new Date object with the random time
-	        Date randomDate = new Date(randomTime);
+	        randomDate = new Date(randomTime);
 	        
 	        TypedQuery<Event> query = db.createQuery("SELECT ev FROM Event ev WHERE ev.eventDate=?1", Event.class);
 			query.setParameter(1, randomDate);
 			List<Event> events = query.getResultList();
 			//Estoy seguro que esto se podría mejorar, pero es para realizar pruebas, y además es una manera segura de hacerlo
 			if(events.isEmpty()) break;
-			return randomDate;
 	        }
-	        
+	        return randomDate;
 		}
 }
 
