@@ -17,7 +17,7 @@ import exceptions.NotEnoughMoneyException;
 import exceptions.ObjectAlreadyExistException;
 import dataAccess.DataAccess;
 
-public class createBetBLBMTest {
+public class CreateBetBLBMTest {
 
 	int frNum;
 	String description;
