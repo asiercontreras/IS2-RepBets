@@ -1,3 +1,7 @@
 /target/
 src/main/resources/bets.temp
 src/main/resources/bets.temp$
+src/main/resources/log/**/*.log
+ConfigXMLLOGGER.txt
+DataAccessLOGGER.txt
+LoginGUILOGGER.txt

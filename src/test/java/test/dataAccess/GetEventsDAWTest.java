@@ -4,16 +4,11 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 import java.util.*;
 
-import javax.persistence.LockTimeoutException;
 import javax.persistence.PersistenceException;
-import javax.persistence.PessimisticLockException;
-import javax.persistence.QueryTimeoutException;
-import javax.transaction.TransactionRequiredException;
 
 import configuration.UtilDate;
 import dataAccess.DataAccess;
 import domain.*;
-import exceptions.NotEnoughMoneyException;
 import exceptions.ObjectAlreadyExistException;
 import org.junit.Before;
 import org.junit.Test;

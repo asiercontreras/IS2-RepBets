@@ -172,6 +172,7 @@ public class TestDataAccess {
 			
 		}
 		
+		@SuppressWarnings("deprecation")
 		public Date getRandomDateWithNoEvents() {
 			Date startDate = new Date(120, 0, 1); //1/1/2020
 	        Date endDate = new Date(123, 11, 31); //1/12/2023
