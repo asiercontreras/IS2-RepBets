@@ -65,7 +65,7 @@
 		<sonar.organization>proyectois2-bets</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 		<sonar.projectKey>proyectois2-bets_repbets</sonar.projectKey>
-		<sonar.login>3fc9c5fa96837f1b974ee0d2c77b26f14a4a05b4</sonar.login>
+		<sonar.login>${env.SONAR_TOKEN}</sonar.login>
 	</properties>
 
 	<!-- https://mvnrepository.com/artifact/junit/junit -->
