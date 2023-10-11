@@ -20,7 +20,7 @@ public class Question implements Serializable {
 	@XmlJavaTypeAdapter(IntegerAdapter.class)
 	@GeneratedValue
 	private Integer questionNumber;
-	private String question; 
+	private String pregunta; 
 	private float betMinimum;
 	private Forecast result = null;
 	@XmlIDREF
@@ -36,14 +36,14 @@ public class Question implements Serializable {
 	public Question(Integer queryNumber, String query, float betMinimum, Event event) {
 		super();
 		this.questionNumber = queryNumber;
-		this.question = query;
+		this.pregunta = query;
 		this.betMinimum=betMinimum;
 		this.event = event;
 	}
 	
 	public Question(String query, float betMinimum,  Event event) {
 		super();
-		this.question = query;
+		this.pregunta = query;
 		this.betMinimum=betMinimum;
 
 		this.event = event;
@@ -83,7 +83,7 @@ public class Question implements Serializable {
 	 */
 
 	public String getQuestion() {
-		return question;
+		return pregunta;
 	}
 
 
@@ -93,7 +93,7 @@ public class Question implements Serializable {
 	 * @param question to be setted
 	 */	
 	public void setQuestion(String question) {
-		this.question = question;
+		this.pregunta = question;
 	}
 
 
@@ -180,12 +180,12 @@ public class Question implements Serializable {
     }
 
 	public String toString(){
-		return questionNumber+";"+question+";"+Float.toString(betMinimum);
+		return questionNumber+";"+pregunta+";"+Float.toString(betMinimum);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(betMinimum, event, forecasts, question, questionNumber, result);
+		return Objects.hash(betMinimum, event, forecasts, pregunta, questionNumber, result);
 	}
 
 	@Override
@@ -199,7 +199,7 @@ public class Question implements Serializable {
 		Question other = (Question) obj;
 		return Float.floatToIntBits(betMinimum) == Float.floatToIntBits(other.betMinimum)
 				&& Objects.equals(event, other.event) && Objects.equals(forecasts, other.forecasts)
-				&& Objects.equals(question, other.question) && Objects.equals(questionNumber, other.questionNumber)
+				&& Objects.equals(pregunta, other.pregunta) && Objects.equals(questionNumber, other.questionNumber)
 				&& Objects.equals(result, other.result);
 	}
 
