@@ -176,8 +176,11 @@ public class DataAccess {
 
 			// El mensaje que queremos poner cuando el programa se ejecute correctamente
 			logger.log(Level.INFO, ">>>>>>> BD inicializada\n");
-		} catch (Exception e) {
+		} catch (SecurityException e) {
 			// El mensaje que queremos poner cuando el programa salte un error
+			logger.log(Level.INFO, ">>>>>>> ERROR en el logger\n");
+			
+		} catch (Exception E) {
 			logger.log(Level.INFO, ">>>>>>> ERROR al inicializar la BD\n");
 		}
 	}
