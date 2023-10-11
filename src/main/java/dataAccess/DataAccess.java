@@ -2,6 +2,7 @@ package dataAccess;
 
 import java.util.logging.*;
 import java.io.File;
+import java.security.Permission;
 //hello
 import java.util.Calendar;
 import java.util.Date;
@@ -70,7 +71,10 @@ public class DataAccess {
 				Handler fileHandler = new FileHandler(nombreArchivo);
 
 				// El formato que vayamos a querer darle al logger
-				//fileHandler.setFormatter(new SimpleFormatter());
+				fileHandler.setFormatter(new SimpleFormatter());
+				
+				fileHandler.setLevel(Level.INFO);
+				
 				logger.addHandler(fileHandler);
 			}
 
