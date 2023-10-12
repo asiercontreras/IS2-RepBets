@@ -1,16 +1,11 @@
 package test.dataAccess;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import java.util.*;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 
-import businessLogic.BLFacadeImplementation;
-import configuration.ConfigXML;
+
 import configuration.UtilDate;
 import dataAccess.DataAccess;
 import domain.*;

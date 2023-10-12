@@ -163,7 +163,7 @@ public class TestDataAccess {
 	    }
 		
 		public boolean existEvent(Event ev) {
-			System.out.println(">> DataAccessTest: existQuestion");
+			System.out.println(">> DataAccessTest: existEvent");
 			Event e = db.find(Event.class, ev.getEventNumber());
 			if (e!=null) {
 				return true;

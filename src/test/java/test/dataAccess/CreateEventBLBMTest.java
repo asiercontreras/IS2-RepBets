@@ -1,33 +1,20 @@
 package test.dataAccess;
-
 import static org.junit.Assert.*;
-
-import java.sql.Date;
 import java.util.Calendar;
-import java.util.Vector;
-
-import static org.junit.Assert.*;
-
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
-import org.mockito.Matchers;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-
 import dataAccess.DataAccess;
 import domain.Event;
-import domain.Forecast;
-import domain.User;
 import exceptions.EventFinished;
-import exceptions.NotEnoughMoneyException;
 import exceptions.ObjectAlreadyExistException;
 
 import businessLogic.*;
 import configuration.UtilDate;
 
-public class createEventBLBMTest {
+public class CreateEventBLBMTest {
 
 	char[] pass = { '1', '1' };
 
