@@ -93,6 +93,9 @@ public class ConfigXML {
 
 				// El formato que vayamos a querer darle al logger
 				fileHandler.setFormatter(new SimpleFormatter());
+				
+				fileHandler.setLevel(Level.INFO);
+				
 				logger.addHandler(fileHandler);
 			}
 
@@ -142,6 +145,9 @@ public class ConfigXML {
 			logger.log(Level.INFO, ">>>>>>> databaseLocal=" + databaseLocal + "\n");
 			logger.log(Level.INFO, ">>>>>>> dataBaseOpenMode=" + dataBaseOpenMode+"\n");
 
+		} catch (SecurityException e) {
+			// El mensaje que queremos poner cuando el programa salte un error
+			logger.log(Level.INFO, ">>>>>>> ERROR en el logger\n");
 		} catch (Exception e) {
 			// El mensaje que queremos poner cuando el programa salte un error
 			logger.log(Level.INFO, ">>>>>>> Error in ConfigXML.java: problems with " + configFile+"\n");

@@ -82,6 +82,9 @@ public class CreateForecastGUI extends JFrame {
 
 				// El formato que vayamos a querer darle al logger
 				fileHandler.setFormatter(new SimpleFormatter());
+				
+				fileHandler.setLevel(Level.INFO);
+				
 				logger.addHandler(fileHandler);
 			}
 
@@ -89,6 +92,9 @@ public class CreateForecastGUI extends JFrame {
 
 			// El mensaje que queremos poner cuando el programa se ejecute correctamente
 			logger.log(Level.INFO, ">>>>>>> " + this.getClass().getSimpleName() + " ejecutando correctamente\n");
+		} catch (SecurityException e) {
+			// El mensaje que queremos poner cuando el programa salte un error
+			logger.log(Level.INFO, ">>>>>>> ERROR en el logger\n");
 		} catch (Exception e) {
 			// El mensaje que queremos poner cuando el programa salte un error
 			logger.log(Level.INFO, ">>>>>>> ERROR al ejecutar en " + this.getClass().getSimpleName()+"\n");

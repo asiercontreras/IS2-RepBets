@@ -67,6 +67,9 @@ public class CreateQuestionGUI extends JFrame {
 
 				// El formato que vayamos a querer darle al logger
 				fileHandler.setFormatter(new SimpleFormatter());
+				
+				fileHandler.setLevel(Level.INFO);
+				
 				logger.addHandler(fileHandler);
 			}
 
@@ -74,6 +77,9 @@ public class CreateQuestionGUI extends JFrame {
 
 			// El mensaje que queremos poner cuando el programa se ejecute correctamente
 			logger.log(Level.INFO, ">>>>>>> " + this.getClass().getSimpleName() + " ejecutando correctamente\n");
+		} catch (SecurityException e) {
+			// El mensaje que queremos poner cuando el programa salte un error
+			logger.log(Level.INFO, ">>>>>>> ERROR en el logger\n");
 		} catch (Exception e) {
 			// El mensaje que queremos poner cuando el programa salte un error
 			logger.log(Level.INFO, ">>>>>>> ERRRO al ejecutar en " + this.getClass().getSimpleName()+"\n");
@@ -302,6 +308,9 @@ public class CreateQuestionGUI extends JFrame {
 
 				// El formato que vayamos a querer darle al logger
 				fileHandler1.setFormatter(new SimpleFormatter());
+				
+				fileHandler1.setLevel(Level.INFO);
+				
 				logger.addHandler(fileHandler1);
 			}
 
@@ -339,6 +348,9 @@ public class CreateQuestionGUI extends JFrame {
 			jLabelMsg.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorQueryAlreadyExist"));
 		} catch (java.lang.NumberFormatException e1) {
 			jLabelError.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorNumber"));
+		} catch (SecurityException s) {
+			// El mensaje que queremos poner cuando el programa salte un error
+			logger.log(Level.INFO, ">>>>>>> ERROR en el logger\n");
 		} catch (Exception e1) {
 			// El mensaje que queremos poner cuando el programa salte un error
 			logger.log(Level.INFO,
