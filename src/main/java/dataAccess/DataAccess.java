@@ -117,7 +117,6 @@ public class DataAccess {
 			Question q4;
 			Question q5;
 			Question q6;
-			Forecast f1;
 
 			if (Locale.getDefault().equals(new Locale("es"))) {
 				q1 = ev1.addQuestion("¿Quién ganará el partido?", 1);

@@ -245,8 +245,6 @@ public class BLFacadeImplementation implements BLFacade {
 		dbManager.open(false);
 		try {
 			card = dbManager.addCard(usr, hashedNum, cvv, last3Digits);
-		} catch (ObjectAlreadyExistException e) {
-			throw e;
 		} finally {
 			dbManager.close();
 		}
