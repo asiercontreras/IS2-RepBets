@@ -72,9 +72,9 @@ public class DataAccess {
 
 				// El formato que vayamos a querer darle al logger
 				fileHandler.setFormatter(new SimpleFormatter());
-				
+
 				fileHandler.setLevel(Level.INFO);
-				
+
 				logger.addHandler(fileHandler);
 			}
 
@@ -308,10 +308,25 @@ public class DataAccess {
 	 */
 	public float createBet(float bet, User usr, Forecast fr) throws NotEnoughMoneyException {
 		System.out.println(">> DataAcces: CreateBet => quantity: " + bet + ", question: " + fr.getQuestion());
-
 		User u = db.find(User.class, usr.getDni());
 		Forecast f = db.find(Forecast.class, fr.getFrNum());
 		Bet b = u.findBet(fr);
+		float newValue = this.getNewWalletValue(u, b, bet);
+		this.realizarApuestaEnBD(b, u, newValue, bet, f);
+		return newValue;
+	}
+
+	/**
+	 * Devuelve el nuevo valor que tendra la cartera en caso de que se pudiera hacer
+	 * la apuesta
+	 * 
+	 * @param u   el usuario
+	 * @param b   la clase de apuesta
+	 * @param bet el dinero (float) que va a apostar
+	 * @return
+	 * @throws NotEnoughMoneyException
+	 */
+	private float getNewWalletValue(User u, Bet b, float bet) throws NotEnoughMoneyException {
 		float newValue;
 		if (b != null)
 			newValue = u.getWallet() + b.getBet() - bet;
@@ -319,7 +334,20 @@ public class DataAccess {
 			newValue = u.getWallet() - bet;
 		if (newValue < 0)
 			throw new NotEnoughMoneyException("You do not have enough money");
+		return newValue;
 
+	}
+
+	/**
+	 * realiza la apuesta en la BD
+	 * 
+	 * @param b        la clase apuesta
+	 * @param u        Usuario
+	 * @param newValue el nuevo valor que quedara en la cartera
+	 * @param bet      el dinero que ha a apostado
+	 * @param f        el forecast al que ha apostado
+	 */
+	private void realizarApuestaEnBD(Bet b, User u, float newValue, float bet, Forecast f) {
 		db.getTransaction().begin();
 		if (b != null) {
 			Bet dbBet = db.find(Bet.class, b.getId());
@@ -333,7 +361,6 @@ public class DataAccess {
 			db.persist(b);
 		}
 		db.getTransaction().commit();
-		return newValue;
 	}
 
 	/**
