@@ -111,13 +111,10 @@ public class BLFacadeImplementation implements BLFacade {
 
 		dbManager.open(false);
 
-		try {
-			qry = dbManager.createQuestion(event, question, betMinimum);
-		} catch (QuestionAlreadyExist e) {
-			throw e;
-		} finally {
-			dbManager.close();
-		}
+		qry = dbManager.createQuestion(event, question, betMinimum);
+
+		dbManager.close();
+
 
 		return qry;
 	};
