@@ -51,7 +51,7 @@ public class CreateBetDAWTest {
 		ev11 = sut.createEvent("Gana Atleti", UtilDate.newDate(year, month, 17));
 		q11 = ev11.addQuestion("¿Quién ganará el partido?", 1f);
 		float expectedWalletValue = 190.0f;
-		User user1 = sut.createUser("asier", "contreras", "24", new Date(2000, 5, 1), "11", false);
+		User user1 = sut.createUser(new User ("asier", "contreras", "24", new Date(2000, 5, 1), "11", false));
 		user1.setWallet(200f);
 		Forecast forecast1 = sut.createForecast(description, winrate, q11);
 		// Llama al método createBet y verifica si funciona correctamente.
@@ -82,7 +82,7 @@ public class CreateBetDAWTest {
 		ev11 = sut.createEvent("Gana Atleti", UtilDate.newDate(year, month, 17));
 		q11 = ev11.addQuestion("¿Quién ganará el partido?", 1f);
 		float expectedWalletValue = 190.0f;
-		User user1 = sut.createUser("asier", "contreras", "24", new Date(2000, 5, 1), "11", false);
+		User user1 = sut.createUser(new User ("asier", "contreras", "24", new Date(2000, 5, 1), "11", false));
 		user1.setWallet(5.0f);
 		Forecast forecast1 = sut.createForecast(description, winrate, q11);
 		// Llama al método createBet y verifica si funciona correctamente.
@@ -115,7 +115,7 @@ public class CreateBetDAWTest {
 		ev11 = sut.createEvent("Gana Atleti", UtilDate.newDate(year, month, 17));
 		q11 = ev11.addQuestion("¿Quién ganará el partido?", 1f);
 		float expectedWalletValue = 190.0f;
-		User user1 = sut.createUser("asier", "contreras", "24", new Date(2000, 5, 1), "11", false);
+		User user1 = sut.createUser(new User ("asier", "contreras", "24", new Date(2000, 5, 1), "11", false));
 		user1.setWallet(200f);
 		Forecast forecast1 = sut.createForecast(description, winrate, q11);
 		try {

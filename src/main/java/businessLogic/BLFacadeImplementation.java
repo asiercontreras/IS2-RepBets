@@ -120,20 +120,20 @@ public class BLFacadeImplementation implements BLFacade {
 	};
 
 	@WebMethod
-	public User createUser(String name, String surnames, String dni, Date birthdate, char[] passwd, boolean isAdmin)
+	public User createUser(User u)
 			throws ObjectAlreadyExistException, NoSuchAlgorithmException {
 		User usr = null;
-		String pass = String.valueOf(passwd);
+		String pass = String.valueOf(u.getPasswd());
 
 		String hash = hashPass(pass);
 		System.out.println("hashed passwd: " + hash);
 		pass = null;
-		passwd = null;
+		u.setPasswd(null);
 
 		dbManager.open(false);
 
 		try {
-			usr = dbManager.createUser(name, surnames, dni, birthdate, hash, isAdmin);
+			usr = dbManager.createUser(new User (u.getName(), u.getSurnames(), u.getDni(), u.getBirthdate(), hash, u.isAdmin()));
 		} catch (ObjectAlreadyExistException e) {
 			throw e;
 		} finally {

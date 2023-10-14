@@ -51,7 +51,7 @@ public interface BLFacade  {
 	 */	
 	@WebMethod public void initializeBD();
 
-	@WebMethod public User createUser(String name, String surnames, String dni, Date birthdate, char[] passwd, boolean isAdmin) throws ObjectAlreadyExistException, NoSuchAlgorithmException;
+	@WebMethod public User createUser(User u) throws ObjectAlreadyExistException, NoSuchAlgorithmException;
 	
 	@WebMethod public Event createEvent(String description, Date eventDate) throws EventFinished, ObjectAlreadyExistException;
 

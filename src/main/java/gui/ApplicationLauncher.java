@@ -10,6 +10,8 @@ import javax.swing.UIManager;
 import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
 
+import domain.User;
+
 import configuration.ConfigXML;
 import dataAccess.DataAccess;
 import businessLogic.BLFacade;
@@ -65,8 +67,12 @@ public class ApplicationLauncher {
 				DataAccess da = new DataAccess(c.getDataBaseOpenMode().equals("initialize"));
 				appFacadeInterface = new BLFacadeImplementation(da);
 				char[] passwd = { '1', '1' };
-				appFacadeInterface.createUser("asier", "contreras", "11", new Date(2000, 5, 1), passwd, false);	
-				appFacadeInterface.createUser("Adminitrador", "Administrador", "00", new Date(2000, 5, 1), passwd, true);
+				String passS = "";
+				for(char ch: passwd) {
+					passS+=ch;
+				}
+				appFacadeInterface.createUser(new User ("asier", "contreras", "11", new Date(2000, 5, 1), passS, false));	
+				appFacadeInterface.createUser(new User ("Adminitrador", "Administrador", "00", new Date(2000, 5, 1), passS, true));
 			} else { // If remote
 				String serviceName = "http://" + c.getBusinessLogicNode() + ":" + c.getBusinessLogicPort() + "/ws/"
 						+ c.getBusinessLogicName() + "?wsdl";

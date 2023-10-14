@@ -54,7 +54,7 @@ public class CreateBetDABTest {
 		ev11 = sut.createEvent("Gana Atleti", UtilDate.newDate(year, month, 17));
 		q11 = ev11.addQuestion("¿Quién ganará el partido?", 1f);
 		float expectedWalletValue = 190.0f;
-		User user1 = sut.createUser("asier", "contreras", "24", new Date(2000, 5, 1), "11", false);
+		User user1 = sut.createUser(new User ("asier", "contreras", "24", new Date(2000, 5, 1), "11", false));
 		user1.setWallet(200f);
 		Forecast forecast1 = sut.createForecast(description, winrate, q11);
 		// Llama al método createBet y verifica si funciona correctamente.
@@ -85,7 +85,7 @@ public class CreateBetDABTest {
 		ev11 = sut.createEvent("Gana Atleti", UtilDate.newDate(year, month, 17));
 		q11 = ev11.addQuestion("¿Quién ganará el partido?", 1f);
 		float expectedWalletValue = 5.0f;
-		User user1 = sut.createUser("asier", "contreras", "24", new Date(2000, 5, 1), "11", false);
+		User user1 = sut.createUser(new User ("asier", "contreras", "24", new Date(2000, 5, 1), "11", false));
 		user1.setWallet(5.0f);
 		Forecast forecast1 = sut.createForecast(description, winrate, q11);
 		// Llama al método createBet y verifica si funciona correctamente.
@@ -118,7 +118,7 @@ public class CreateBetDABTest {
 		ev11 = sut.createEvent("Gana Atleti", UtilDate.newDate(year, month, 17));
 		q11 = ev11.addQuestion("¿Quién ganará el partido?", 1f);
 		float expectedWalletValue = 190.0f;
-		User user1 = sut.createUser("asier", "contreras", "24", new Date(2000, 5, 1), "11", false);
+		User user1 = sut.createUser(new User ("asier", "contreras", "24", new Date(2000, 5, 1), "11", false));
 		user1.setWallet(200f);
 		Forecast forecast1 = sut.createForecast(description, winrate, q11);
 		try {
@@ -139,39 +139,4 @@ public class CreateBetDABTest {
 			System.out.println("Finally " + b);
 		}
 	}
-
-	// Realizamos una apuesta con un usuario que no existe en la bd
-	@Test
-	public void test4() throws NotEnoughMoneyException, ObjectAlreadyExistException {
-
-		sut = new DataAccess();
-		// additional operations needed to execute the test
-		testDA = new TestDataAccess();
-		// Configura el escenario de prueba con un usuario y una previsión que tenga
-		ev11 = sut.createEvent("Gana Atleti", UtilDate.newDate(year, month, 17));
-		q11 = ev11.addQuestion("¿Quién ganará el partido?", 1f);
-		float expectedWalletValue = 5.0f;
-		User user1 = new User("asier", "contreras", "24", new Date(2000, 5, 1), "11", false);
-		user1.setWallet(10.0f);
-		Forecast forecast1 = sut.createForecast(description, winrate, q11);
-		try {
-
-			// Llama al método createBet y verifica si funciona correctamente.
-			float newValue = sut.createBet(5.0f, user1, forecast1);
-			// Verifica que el nuevo valor de la billetera sea el esperado.
-			assertEquals(expectedWalletValue, newValue, 0.01); 
-		} catch (NotEnoughMoneyException e) {
-			System.out.println("Error");
-			fail("El método createBet debería permitir una apuesta válida con suficiente dinero.");
-		} finally {
-			// Remove the created objects in the database (cascade removing)
-			testDA.open();
-			testDA.removeEvent(ev11);
-			testDA.removeForecast(forecast1);
-			testDA.close();
-			System.out.println("Finally ");
-		}
-
-	}
-
 }

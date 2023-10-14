@@ -230,18 +230,17 @@ public class DataAccess {
 	 * @return the user
 	 * @throws UserAlreadyExist if a user with the same dni exists
 	 */
-	public User createUser(String name, String surnames, String dni, Date birthdate, String passwd, boolean isAdmin)
+	public User createUser(User u)
 			throws ObjectAlreadyExistException {
-		System.out.println(">> DataAccess: CreateUser=> name = " + name + " dni = " + dni);
+		System.out.println(">> DataAccess: CreateUser=> name = " + u.getName() + " dni = " + u.getDni());
 
-		if (db.find(User.class, dni) != null)
+		if (db.find(User.class, u.getDni()) != null)
 			throw new ObjectAlreadyExistException("The user already exists");
 
 		db.getTransaction().begin();
-		User usr = new User(name, surnames, dni, birthdate, passwd, isAdmin);
-		db.persist(usr);
+		db.persist(u);
 		db.getTransaction().commit();
-		return usr;
+		return u;
 	}
 
 	/**

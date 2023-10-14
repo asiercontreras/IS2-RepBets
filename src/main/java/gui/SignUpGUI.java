@@ -24,6 +24,7 @@ import javax.swing.SwingConstants;
 import com.toedter.calendar.JCalendar;
 
 import businessLogic.BLFacade;
+import domain.User;
 import exceptions.ObjectAlreadyExistException;
 
 public class SignUpGUI extends JFrame {
@@ -155,7 +156,11 @@ public class SignUpGUI extends JFrame {
                 if(name.length() > 0 && sur1.length() > 0 && sur2.length() > 0 && 
                         dni.length() > 0 && passwd.length > 0){
                     try {
-                        facade.createUser(name, surnames, dni, birthdate, passwd, false);
+                    	String passS="";
+                    	for(char c:passwd) {
+                            passS+=c;
+                        }
+                    	facade.createUser(new User (name, surnames, dni, birthdate, passS, false));
                         jButtonClose_actionPerformed(e);
                     } catch (ObjectAlreadyExistException e1) {
                         lblerror.setText(e1.getMessage());
