@@ -23,16 +23,18 @@ import javax.swing.table.DefaultTableModel;
 
 public class CreateForecastGUI extends JFrame {
 	private static final long serialVersionUID = 1L;
+	
+	private ResourceBundle RBEtiquetas = ResourceBundle.getBundle("Etiquetas");
 
-	private final JLabel jLabelEventDate = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("EventDate"));
-	private final JLabel jLabelQueries = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Queries"));
-	private final JLabel jLabelEvents = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Events"));
-	private final JLabel lblDescription = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Description"));
-	private final JLabel lblWinrate = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Winrate"));
+	private final JLabel jLabelEventDate = new JLabel(RBEtiquetas.getString("EventDate"));
+	private final JLabel jLabelQueries = new JLabel(RBEtiquetas.getString("Queries"));
+	private final JLabel jLabelEvents = new JLabel(RBEtiquetas.getString("Events"));
+	private final JLabel lblDescription = new JLabel(RBEtiquetas.getString("Description"));
+	private final JLabel lblWinrate = new JLabel(RBEtiquetas.getString("Winrate"));
 	private JLabel lblError;
 
-	private JButton jButtonClose = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Close"));
-	private JButton btnCreateForecast = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateForecast"));
+	private JButton jButtonClose = new JButton(RBEtiquetas.getString("Close"));
+	private JButton btnCreateForecast = new JButton(RBEtiquetas.getString("CreateForecast"));
 
 	// Code for JCalendar
 	private JCalendar jCalendar1 = new JCalendar();
@@ -47,18 +49,18 @@ public class CreateForecastGUI extends JFrame {
 	private DefaultTableModel tableModelEvents;
 	private DefaultTableModel tableModelForecast;
 
-	private String[] columnNamesEvents = new String[] { ResourceBundle.getBundle("Etiquetas").getString("EventN"),
-			ResourceBundle.getBundle("Etiquetas").getString("Event"),
+	private String[] columnNamesEvents = new String[] { RBEtiquetas.getString("EventN"),
+			RBEtiquetas.getString("Event"),
 
 	};
 	private String[] columnNamesForecast = new String[] {
-			ResourceBundle.getBundle("Etiquetas").getString("Description"),
-			ResourceBundle.getBundle("Etiquetas").getString("Winrate"), };
+			RBEtiquetas.getString("Description"),
+			RBEtiquetas.getString("Winrate"), };
 
 	private JComboBox<Question> queryBox = new JComboBox<>();
 	private JTextField descriptionField;
 	private JTextField winrateField;
-	private final JLabel lblForecasts = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Forecasts")); //$NON-NLS-1$ //$NON-NLS-2$
+	private final JLabel lblForecasts = new JLabel(RBEtiquetas.getString("Forecasts")); //$NON-NLS-1$ //$NON-NLS-2$
 	private JScrollPane scrollPaneForecast = new JScrollPane();
 	private JTable tableForecast = new JTable();
 
@@ -106,7 +108,7 @@ public class CreateForecastGUI extends JFrame {
 		this.getContentPane().setLayout(null);
 		this.setSize(new Dimension(700, 500));
 		this.setResizable(false);
-		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("CreateForecast"));
+		this.setTitle(RBEtiquetas.getString("CreateForecast"));
 
 		jLabelEventDate.setBounds(new Rectangle(40, 15, 140, 25));
 		jLabelQueries.setBounds(40, 230, 350, 14);
@@ -190,11 +192,11 @@ public class CreateForecastGUI extends JFrame {
 						Vector<domain.Event> events = facade.getEvents(firstDay);
 
 						if (events.isEmpty()) {
-							jLabelEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("NoEvents") + ": "
+							jLabelEvents.setText(RBEtiquetas.getString("NoEvents") + ": "
 									+ dateformat1.format(calendarAct.getTime()));
 							queryBox.removeAllItems();
 						} else
-							jLabelEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("Events") + ": "
+							jLabelEvents.setText(RBEtiquetas.getString("Events") + ": "
 									+ dateformat1.format(calendarAct.getTime()));
 						for (domain.Event ev : events) {
 							Vector<Object> row = new Vector<Object>();
@@ -235,9 +237,9 @@ public class CreateForecastGUI extends JFrame {
 
 				if (queries.isEmpty())
 					jLabelQueries.setText(
-							ResourceBundle.getBundle("Etiquetas").getString("NoQueries") + ": " + ev.getDescription());
+							RBEtiquetas.getString("NoQueries") + ": " + ev.getDescription());
 				else
-					jLabelQueries.setText(ResourceBundle.getBundle("Etiquetas").getString("SelectedEvent") + " "
+					jLabelQueries.setText(RBEtiquetas.getString("SelectedEvent") + " "
 							+ ev.getDescription());
 
 				for (domain.Question q : queries) {
@@ -297,7 +299,7 @@ public class CreateForecastGUI extends JFrame {
 					lblError.setForeground(new Color(255, 0, 0));
 					String description = descriptionField.getText();
 					if (description.length() <= 0) {
-						lblError.setText(ResourceBundle.getBundle("Etiquetas").getString("DescriptionField"));
+						lblError.setText(RBEtiquetas.getString("DescriptionField"));
 						return;
 					}
 					Question q = (Question) queryBox.getSelectedItem();
@@ -313,9 +315,9 @@ public class CreateForecastGUI extends JFrame {
 					winrateField.setText("");
 					descriptionField.setText("");
 					lblError.setForeground(new Color(0, 0, 0));
-					lblError.setText(ResourceBundle.getBundle("Etiquetas").getString("ForecastCreated"));
+					lblError.setText(RBEtiquetas.getString("ForecastCreated"));
 				} catch (NumberFormatException e1) {
-					lblError.setText(ResourceBundle.getBundle("Etiquetas").getString("WinrateField"));
+					lblError.setText(RBEtiquetas.getString("WinrateField"));
 				} catch (ObjectAlreadyExistException e1) {
 					lblError.setText(e1.getMessage());
 				}
