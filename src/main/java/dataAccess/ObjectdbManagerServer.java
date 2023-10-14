@@ -47,7 +47,7 @@ public class ObjectdbManagerServer extends JDialog {
 		try {
         	
 			//Crear el nombre del que va a tener el archivo
-			String nombreArchivo = ObjectdbManagerServer.class.getSimpleName() + "LOGGER.txt";
+			String nombreArchivo = ObjectdbManagerServer.class.getSimpleName() + "LOGGER.log";
 			
 			//Crear un fichero para saber si se ha creado o no
 			File archivo = new File(nombreArchivo);

@@ -1,3 +1,0 @@
-Oct 11, 2023 4:10:01 PM dataAccess.DataAccess initializeDB
-INFO: >>>>>>> BD inicializada
-

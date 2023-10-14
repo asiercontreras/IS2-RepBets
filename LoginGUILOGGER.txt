@@ -1,6 +1,0 @@
-Oct 11, 2023 4:10:13 PM gui.LoginGUI <init>
-INFO: >>>>>>> LoginGUI ejecutando correctamente
-
-Oct 11, 2023 4:10:21 PM gui.LoginGUI <init>
-INFO: >>>>>>> LoginGUI ejecutando correctamente
-

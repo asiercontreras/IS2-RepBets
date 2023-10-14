@@ -70,7 +70,7 @@ public class CreateForecastGUI extends JFrame {
 		try {
 
 			// Crear el nombre del que va a tener el archivo
-			String nombreArchivo = this.getClass().getSimpleName() + "LOGGER.txt";
+			String nombreArchivo = this.getClass().getSimpleName() + "LOGGER.log";
 
 			// Crear un fichero para saber si se ha creado o no
 			File archivo = new File(nombreArchivo);
