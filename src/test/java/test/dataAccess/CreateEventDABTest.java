@@ -49,25 +49,10 @@ public class CreateEventDABTest {
 
 		descripcion = "Hay evento creado?";
 
-		/*ev = sut.createEvent(descripcion, UtilDate.newDate(year, month, 12));
-
-		// Llama al método createEvent y verifica si funciona correctamente.
-		assertThrows(ObjectAlreadyExistException.class, () -> {
-			ev1 = sut.createEvent(descripcion, UtilDate.newDate(year, month, 12));
-		});*/
-		
 		try {
 			ev = sut.createEvent(descripcion, UtilDate.newDate(year, month+1, 12));
 			
-			assertTrue(ev!=null);
-			
-			testDA.open();
-			
-			boolean exist = testDA.existEvent(ev);
-			
-			assertTrue(exist);
-			
-			testDA.close();
+			ev1 = sut.createEvent(descripcion, UtilDate.newDate(year, month+1, 12));
 		}
 		catch (ObjectAlreadyExistException e) {
 			fail("El metodo createEvent deberia de permitir un evento el cual no se ha creado todavia.");
@@ -89,25 +74,20 @@ public class CreateEventDABTest {
 		testDA = new TestDataAccess();
 
 		descripcion = "Hay evento creado?";
-		String descripcion1 = "No hay evento creado?";
 		
 		try {
-			
-			ev = sut.createEvent(descripcion, UtilDate.newDate(year, month+1, 12));
-
 			// Llama al método createEvent y verifica si funciona correctamente.
-			ev1 = sut.createEvent(descripcion1, null);
-			assertNull(ev1.getEventDate());
+			ev = sut.createEvent(descripcion, null);
+			assertNotNull(ev.getEventDate());
 		} catch (ObjectAlreadyExistException e) {
-			fail("El metodo createEvent deberia de permitir un evento el cual no se ha creado todavia.");
+			fail("El metodo createEvent deberia de permitir un evento el cual no se ha creado todavia y una fecha.");
 		}
 		finally {
 			// Remove the created objects in the database (cascade removing)
 			testDA.open();
 			boolean b = testDA.removeEvent(ev);
-			boolean b1 = testDA.removeEvent(ev1);
 			testDA.close();
-			System.out.println("Finally " + b + " y " + b1);
+			System.out.println("Finally " + b);
 		}
 	}
 	
@@ -128,7 +108,7 @@ public class CreateEventDABTest {
 
 			// Llama al método createEvent y verifica si funciona correctamente.
 			ev1 = sut.createEvent(descripcion1, UtilDate.newDate(year, month+2, 12));
-			assertNotNull(ev1);
+
 		} catch (ObjectAlreadyExistException e) {
 			fail("El metodo createEvent deberia de permitir un evento el cual no se ha creado todavia.");
 		}

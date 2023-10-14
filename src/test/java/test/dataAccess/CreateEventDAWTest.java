@@ -38,6 +38,7 @@ public class CreateEventDAWTest {
 	}
 
 	@Test
+	// Test que se crea un evento el cual ya estaba creado de antes
 	public void test0() throws ObjectAlreadyExistException {
 		sut = new DataAccess();
 		// additional operations needed to execute the test
@@ -61,6 +62,7 @@ public class CreateEventDAWTest {
 	}
 
 	@Test
+	// Test que se crea un evento nuevo
 	public void test1() throws ObjectAlreadyExistException {
 		sut = new DataAccess();
 		// additional operations needed to execute the test
