@@ -28,6 +28,8 @@ public class WalletGUI extends JFrame {
 	private JTextField vccField;
 	private JComboBox<Card> cardBox;
     private float money;
+    private Font font = new Font("Dialog", Font.BOLD, 16);
+    private Font font1 = new Font("Dialog", Font.BOLD, 12);
 
 	public WalletGUI() {
 		this.setSize(new Dimension(500, 380));
@@ -46,8 +48,6 @@ public class WalletGUI extends JFrame {
 		setTitle(ResourceBundle.getBundle("Etiquetas").getString("Wallet"));
 		panel.setLayout(null);
 		this.setSize(new Dimension(500, 380));
-
-		Font font = new Font("Dialog", Font.BOLD, 16);
 
 		JLabel lblWallet = new JLabel();
 		lblWallet.setFont(font);
@@ -95,7 +95,7 @@ public class WalletGUI extends JFrame {
 		panel.add(textFieldAddMoney);
 		
 		JLabel lblError = new JLabel();
-		lblError.setFont(new Font("Dialog", Font.BOLD, 12));
+		lblError.setFont(font1);
 		lblError.setBounds(69, 175, 300, 20);
 		lblError.setForeground(new Color(255, 0, 0));
 		panel.add(lblError);
@@ -166,8 +166,6 @@ public class WalletGUI extends JFrame {
         JPanel panel = new JPanel();
         panel.setLayout(null);
 
-        Font font = new Font("Dialog", Font.BOLD, 16);
-
         JLabel lblCardNumber = new JLabel();
         lblCardNumber.setFont(font);
         lblCardNumber.setBounds(85, 206, 168, 54);
@@ -180,7 +178,7 @@ public class WalletGUI extends JFrame {
         panel.add(lblDoYouWant);
 
         JLabel lblError = new JLabel();
-        lblError.setFont(new Font("Dialog", Font.BOLD, 12));
+        lblError.setFont(font1);
         lblError.setBounds(174, 350, 300, 20);
         lblError.setForeground(new Color(255, 0, 0));
         panel.add(lblError);
@@ -236,7 +234,7 @@ public class WalletGUI extends JFrame {
         panel.add(lblMoneyToPay);*/
 
       JLabel lblSelectCard = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("SelectSaved"));
-        lblSelectCard.setFont(new Font("Dialog", Font.BOLD, 16));
+        lblSelectCard.setFont(font);
         lblSelectCard.setBounds(85, 91, 340, 15);
         panel.add(lblSelectCard);
 
@@ -264,7 +262,7 @@ public class WalletGUI extends JFrame {
         panel.add(cardBox);
 
         JLabel lblNewLabel = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("AddACard"));
-        lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 16));
+        lblNewLabel.setFont(font);
         lblNewLabel.setBounds(84, 179, 278, 15);
         panel.add(lblNewLabel);
 
