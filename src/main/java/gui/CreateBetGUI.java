@@ -25,18 +25,20 @@ import javax.swing.table.DefaultTableModel;
 public class CreateBetGUI extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-
-	private final JLabel jLabelEventDate = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("EventDate"));
-	private final JLabel jLabelQueries = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Queries"));
-	private final JLabel jLabelEvents = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Events"));
-	private final JLabel lblForecast = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Forecasts"));
-	private final JLabel labelBet = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Bet"));
+	
+	private ResourceBundle RBEtiquetas = ResourceBundle.getBundle("Etiquetas");
+	
+	private final JLabel jLabelEventDate = new JLabel(RBEtiquetas.getString("EventDate"));
+	private final JLabel jLabelQueries = new JLabel(RBEtiquetas.getString("Queries"));
+	private final JLabel jLabelEvents = new JLabel(RBEtiquetas.getString("Events"));
+	private final JLabel lblForecast = new JLabel(RBEtiquetas.getString("Forecasts"));
+	private final JLabel labelBet = new JLabel(RBEtiquetas.getString("Bet"));
 	private JLabel lblcurrentBet;
 	private JLabel lblMoney;
 	private JLabel lblError;
-
-	private JButton jButtonClose = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Close"));
-	private JButton btnMakeBet = new JButton(ResourceBundle.getBundle("Etiquetas").getString("MakeBet"));
+ 
+	private JButton jButtonClose = new JButton(RBEtiquetas.getString("Close"));
+	private JButton btnMakeBet = new JButton(RBEtiquetas.getString("MakeBet"));
 
 	// Code for JCalendar
 	private JCalendar jCalendar1 = new JCalendar();
@@ -50,8 +52,8 @@ public class CreateBetGUI extends JFrame {
 
 	private DefaultTableModel tableModelEvents;
 
-	private String[] columnNamesEvents = new String[] { ResourceBundle.getBundle("Etiquetas").getString("EventN"),
-			ResourceBundle.getBundle("Etiquetas").getString("Event"), };
+	private String[] columnNamesEvents = new String[] { RBEtiquetas.getString("EventN"),
+			RBEtiquetas.getString("Event"), };
 	private JComboBox<Question> queryBox = new JComboBox<>();
 	private JComboBox<Forecast> forecastBox = new JComboBox<>();
 	private JTextField betField = new JTextField();
@@ -104,9 +106,9 @@ public class CreateBetGUI extends JFrame {
 		BLFacade facade = ApplicationLauncher.getBusinessLogic();
 		User usr = facade.getCurrentUser();
 		if (usr == null) {
-			this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("SeeNextEvent"));
+			this.setTitle(RBEtiquetas.getString("SeeNextEvent"));
 		} else {
-			this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("CreateBet"));
+			this.setTitle(RBEtiquetas.getString("CreateBet"));
 
 		}
 		jLabelEventDate.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -192,10 +194,10 @@ public class CreateBetGUI extends JFrame {
 						Vector<domain.Event> events = facade.getEvents(firstDay);
 
 						if (events.isEmpty())
-							jLabelEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("NoEvents") + ": "
+							jLabelEvents.setText(RBEtiquetas.getString("NoEvents") + ": "
 									+ dateformat1.format(calendarAct.getTime()));
 						else
-							jLabelEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("Events") + ": "
+							jLabelEvents.setText(RBEtiquetas.getString("Events") + ": "
 									+ dateformat1.format(calendarAct.getTime()));
 						for (domain.Event ev : events) {
 							if (ev.isClosed())
@@ -237,9 +239,9 @@ public class CreateBetGUI extends JFrame {
 
 				if (queries.isEmpty())
 					jLabelQueries.setText(
-							ResourceBundle.getBundle("Etiquetas").getString("NoQueries") + ": " + ev.getDescription());
+							RBEtiquetas.getString("NoQueries") + ": " + ev.getDescription());
 				else
-					jLabelQueries.setText(ResourceBundle.getBundle("Etiquetas").getString("SelectedEvent") + " "
+					jLabelQueries.setText(RBEtiquetas.getString("SelectedEvent") + " "
 							+ ev.getDescription());
 
 				for (domain.Question q : queries) {
@@ -293,7 +295,7 @@ public class CreateBetGUI extends JFrame {
 				if (usr == null)
 					return;
 				if (forecastBox.getItemCount() == 0) {
-					lblcurrentBet.setText(ResourceBundle.getBundle("Etiquetas").getString("CurrentBet") + " ");
+					lblcurrentBet.setText(RBEtiquetas.getString("CurrentBet") + " ");
 					btnMakeBet.setEnabled(false);
 					betField.setText("");
 					return;
@@ -315,7 +317,7 @@ public class CreateBetGUI extends JFrame {
 				Bet bet = usr.findBet((Forecast) forecastBox.getSelectedItem());
 				if (bet != null)
 					lblcurrentBet.setText(
-							ResourceBundle.getBundle("Etiquetas").getString("CurrentBet") + " " + bet.getBet());
+							RBEtiquetas.getString("CurrentBet") + " " + bet.getBet());
 			}
 		});
 		/* Condicion para que no aparezcan los datos del wallet */
@@ -338,31 +340,31 @@ public class CreateBetGUI extends JFrame {
 						Question q = (Question) queryBox.getSelectedItem();
 
 						if (usr == null) {
-							lblError.setText(ResourceBundle.getBundle("Etiquetas").getString("LoginToBet"));
+							lblError.setText(RBEtiquetas.getString("LoginToBet"));
 							return;
 						}
 
 						if (bet < q.getBetMinimum()) {
-							lblError.setText(ResourceBundle.getBundle("Etiquetas").getString("LoginToBet") + " "
+							lblError.setText(RBEtiquetas.getString("LoginToBet") + " "
 									+ q.getBetMinimum());
 							return;
 						}
 
 						if (q == null || fr == null) {
-							lblError.setText(ResourceBundle.getBundle("Etiquetas").getString("QandF"));
+							lblError.setText(RBEtiquetas.getString("QandF"));
 							return;
 						}
 
 						usr.setWallet(facade.createBet(bet, usr, fr));
 						usr.addBet(new Bet(bet, usr, fr));
 						lblError.setForeground(new Color(0, 0, 0));
-						lblError.setText(ResourceBundle.getBundle("Etiquetas").getString("BetUpdated"));
-						lblcurrentBet.setText(ResourceBundle.getBundle("Etiquetas").getString("CurrentBet") + " "
+						lblError.setText(RBEtiquetas.getString("BetUpdated"));
+						lblcurrentBet.setText(RBEtiquetas.getString("CurrentBet") + " "
 								+ String.valueOf(bet));
 						lblMoney.setText(
-								ResourceBundle.getBundle("Etiquetas").getString("YourMoney") + " " + usr.getWallet());
+								RBEtiquetas.getString("YourMoney") + " " + usr.getWallet());
 					} catch (IllegalArgumentException e1) {
-						lblError.setText(ResourceBundle.getBundle("Etiquetas").getString("NumberField"));
+						lblError.setText(RBEtiquetas.getString("NumberField"));
 					} catch (NotEnoughMoneyException e1) {
 						lblError.setText(e1.getMessage());
 					}
@@ -373,13 +375,13 @@ public class CreateBetGUI extends JFrame {
 
 			lblcurrentBet = new JLabel();
 			lblcurrentBet.setFont(new Font("Tahoma", Font.PLAIN, 14));
-			lblcurrentBet.setText(ResourceBundle.getBundle("Etiquetas").getString("CurrentBet") + " ");
+			lblcurrentBet.setText(RBEtiquetas.getString("CurrentBet") + " ");
 			lblcurrentBet.setBounds(470, 254, 200, 16);
 			lblcurrentBet.setBorder(BorderFactory.createEmptyBorder());
 			getContentPane().add(lblcurrentBet);
 
 			lblMoney = new JLabel();
-			lblMoney.setText(ResourceBundle.getBundle("Etiquetas").getString("CurrentBet") + " "
+			lblMoney.setText(RBEtiquetas.getString("CurrentBet") + " "
 					+ facade.getCurrentUser().getWallet());
 			lblMoney.setFont(new Font("Tahoma", Font.PLAIN, 14));
 			lblMoney.setBounds(470, 230, 200, 16);
@@ -405,13 +407,13 @@ public class CreateBetGUI extends JFrame {
 			btnQuestion.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					JOptionPane.showMessageDialog(null,
-							ResourceBundle.getBundle("Etiquetas").getString("CuotaGanancia"));
+							RBEtiquetas.getString("CuotaGanancia"));
 
 				}
 			});
 			betField.setBounds(470, 310, 140, 35);
 			betField.setBorder(BorderFactory.createEmptyBorder());
-			betField.setText(ResourceBundle.getBundle("Etiquetas").getString("QuantityInEuros"));
+			betField.setText(RBEtiquetas.getString("QuantityInEuros"));
 			betField.setForeground(new Color(190, 190, 190));
 			betField.addMouseListener(new MouseAdapter() {
 				@Override
@@ -426,7 +428,7 @@ public class CreateBetGUI extends JFrame {
 				public void focusGained(FocusEvent e) {
 					if (betField.getText().isEmpty()) {
 						betField.setForeground(new Color(190, 190, 190));
-						betField.setText(ResourceBundle.getBundle("Etiquetas").getString("QuantityInEuros"));
+						betField.setText(RBEtiquetas.getString("QuantityInEuros"));
 					}
 				}
 
@@ -434,7 +436,7 @@ public class CreateBetGUI extends JFrame {
 				public void focusLost(FocusEvent e) {
 					if (betField.getText().isEmpty()) {
 						betField.setForeground(new Color(190, 190, 190));
-						betField.setText(ResourceBundle.getBundle("Etiquetas").getString("QuantityInEuros"));
+						betField.setText(RBEtiquetas.getString("QuantityInEuros"));
 					}
 				}
 			});
