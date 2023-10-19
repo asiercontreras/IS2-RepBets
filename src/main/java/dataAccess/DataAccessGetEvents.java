@@ -14,6 +14,7 @@ import javax.persistence.TypedQuery;
 
 import configuration.ConfigXML;
 import domain.*;
+import exceptions.ObjectAlreadyExistException;
 
 /**
  * It implements the data access to the objectDb database
@@ -54,6 +55,23 @@ public class DataAccessGetEvents {
 			res.add(ev);
 		}
 		return res;
+	}
+	
+	public Event createEvent(String description, Date eventDate) throws ObjectAlreadyExistException {
+		System.out.println(">> DataAccess: CreateEvent => number = " + description + ", date = " + eventDate);
+
+		TypedQuery<Event> query = db.createQuery("SELECT ev FROM Event ev WHERE ev.eventDate=?1 AND ev.description=?2",
+				Event.class);
+		query.setParameter(1, eventDate);
+		query.setParameter(2, description);
+		if (!query.getResultList().isEmpty())
+			throw new ObjectAlreadyExistException("the event already exists");
+
+		db.getTransaction().begin();
+		Event evnt = new Event(description, eventDate);
+		db.persist(evnt);
+		db.getTransaction().commit();
+		return evnt;
 	}
 
 	public void open(boolean initializeMode) {

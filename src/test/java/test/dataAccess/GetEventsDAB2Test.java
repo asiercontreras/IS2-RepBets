@@ -13,13 +13,13 @@ import org.junit.Before;
 import org.junit.Test;
 
 import configuration.UtilDate;
-import dataAccess.DataAccess;
+import dataAccess.*;
 import domain.Event;
 import exceptions.ObjectAlreadyExistException;
 
 public class GetEventsDAB2Test {
 	
-	static DataAccess sut;
+	static DataAccessGetEvents sut;
 	static TestDataAccess testDA;
 	
 	int month;
@@ -44,7 +44,7 @@ public class GetEventsDAB2Test {
 	// Esta prueba busca una fecha que no tiene eventos, y realiza el getEvents()
 	@Test
 	public void test1() {
-		sut = new DataAccess();
+		sut = new DataAccessGetEvents();
 		testDA = new TestDataAccess();
 		
 		Date date = testDA.getRandomDateWithNoEvents();
@@ -61,7 +61,7 @@ public class GetEventsDAB2Test {
 	// Esta prueba añade un evento a una fecha sin eventos y realiza el getEvents()
 	@Test
 	public void test2() {
-		sut = new DataAccess();
+		sut = new DataAccessGetEvents();
 		testDA = new TestDataAccess();
 		
 		try {
@@ -88,7 +88,7 @@ public class GetEventsDAB2Test {
 	// Esta prueba añade multiples eventos a una fecha sin eventos y realiza el getEvents()
 	@Test
 	public void testGetEventsWithMultipleEvents() {
-		sut = new DataAccess();
+		sut = new DataAccessGetEvents();
 		testDA = new TestDataAccess();
 		
 		try {
