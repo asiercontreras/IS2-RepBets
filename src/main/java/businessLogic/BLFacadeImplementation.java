@@ -2,13 +2,14 @@ package businessLogic;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.Vector;
+import java.util.Iterator;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
-
 import configuration.ConfigXML;
 import dataAccess.DataAccess;
 import domain.*;
@@ -324,5 +325,15 @@ public class BLFacadeImplementation implements BLFacade {
 		} catch (NoSuchAlgorithmException e) {
 			return false;
 		}
+	}
+	public	ExtendedIterator<Event> getEventsIterator(Date date){
+		dbManager.open(false);
+		Vector<Event> events = dbManager.getEvents(date);
+		dbManager.close();
+		ArrayList<Event> list = new ArrayList<Event>();
+		for(Event e: events){
+			list.add(e);
+		}
+		return new ExtendedIterator<Event>(list);
 	}
 }

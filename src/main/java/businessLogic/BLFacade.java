@@ -37,6 +37,9 @@ public interface BLFacade  {
 	 */
 	@WebMethod public Vector<Event> getEvents(Date date);
 	
+	@WebMethod public ExtendedIterator<Event> getEventsIterator(Date date);
+
+	
 	/**
 	 * This method retrieves from the database the dates a month for which there are events
 	 * 
