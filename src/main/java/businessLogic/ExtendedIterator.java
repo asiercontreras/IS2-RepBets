@@ -39,7 +39,7 @@ public class ExtendedIterator<Object> implements Iterator<Object> {
 		if (hasNext()) {
 			return eventList.get(++currentIndex);
 		}
-		return null; // O puedes lanzar una excepción aquí si lo prefieres
+		return null; 
 	}
 
 }
