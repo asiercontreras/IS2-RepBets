@@ -48,6 +48,7 @@ public class MainGUI extends JFrame {
 	private JButton jButtonCloseEvent;
     private JButton btnChangeProfile;
     private JButton lookBets;
+    private JButton adapterBets;
 
 	/**
 	 * This is the default constructor
@@ -117,6 +118,7 @@ public class MainGUI extends JFrame {
 				jContentPane.add(this.getJButtonMakeBet());
 				jContentPane.add(this.getJButtonAddMoney());
                 jContentPane.add(this.getJButtonLookBets());
+                jContentPane.add(this.getJButtonAdapterTest());
 			}
 		}
 
@@ -549,5 +551,36 @@ public class MainGUI extends JFrame {
 			});
 		}
 		return lookBets;
+	}
+	
+	private JButton getJButtonAdapterTest() {
+		if (adapterBets == null) {
+			adapterBets = new JButton();
+			adapterBets.setText(ResourceBundle.getBundle("Etiquetas").getString("AdapterTest"));
+			adapterBets.setBounds(350, 250, 100, 30);
+			adapterBets.setBorder(BorderFactory.createEmptyBorder());
+			adapterBets.setBackground(new Color(180, 180, 180));
+			adapterBets.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseEntered(MouseEvent e) {
+					adapterBets.setBackground(new Color(70, 130, 180));
+					adapterBets.setFocusPainted(false);
+				}
+
+				@Override
+				public void mouseExited(MouseEvent e) {
+					adapterBets.setBackground(new Color(180, 180, 180));
+				}
+			});
+
+			adapterBets.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					JFrame a = new WindowTable(appFacadeInterface.getCurrentUser());
+
+					a.setVisible(true);
+				}
+			});
+		}
+		return adapterBets;
 	}
 }
