@@ -18,7 +18,7 @@ public class BLFactory {
 
 	private static BLFacade appFacadeInterface;
 
-	public BLFacade crearBFFacade(ConfigXML c) {
+	public BLFacade crearBLFacade(ConfigXML c) {
 
 		System.out.println(c.getLocale());
 

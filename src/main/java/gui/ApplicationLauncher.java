@@ -38,7 +38,7 @@ public class ApplicationLauncher {
 	public static void main(String[] args) {
 
 		ConfigXML c = ConfigXML.getInstance();
-		appFacadeInterface = blfact.crearBFFacade(c);
+		appFacadeInterface = blfact.crearBLFacade(c);
 
 		char[] passwd = { '1', '1' };
 		String passS = "";
