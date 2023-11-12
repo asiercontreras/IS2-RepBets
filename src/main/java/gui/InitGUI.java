@@ -27,6 +27,10 @@ public class InitGUI extends JFrame {
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 
 	protected JLabel jLabelSelectOption;
+	
+	public JLabel getIJlabelSelectOption() {
+		return this.jLabelSelectOption;
+	}
 
 	public InitGUI() {
 
