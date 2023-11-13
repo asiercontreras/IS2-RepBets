@@ -1,21 +1,13 @@
 package test.patrones;
 
-import static org.junit.Assert.*;
-
 import domain.Event;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import java.util.Calendar;
 import java.util.Date;
 import org.junit.Test;
-import configuration.UtilDate;
 
 import businessLogic.*;
-import dataAccess.DataAccess;
 
 public class iteratorTest {
 
